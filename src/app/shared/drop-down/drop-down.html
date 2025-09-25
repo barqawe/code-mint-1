@@ -1,0 +1,8 @@
+<select name="myDropdown" id="myDropdown" [formControl]="config.control" class="drop-down" >
+
+    <option value="" selected="selected">{{config.placeholder}}</option>
+ @for ( option of config.options; track $index) {
+    <option selected="selected" [value]="$index">{{ option }}</option>
+ }
+</select>
+

@@ -1,0 +1,26 @@
+@import '../../../../public/cssVars.scss';
+
+.time-input {
+    background-color: $input-bg-color;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    color: $input-text-color;
+    width: 100%;
+    height: 55px;
+    font-size: 14px;
+    padding: 0 10px;
+    text-align: left;
+    position: relative;
+
+    &::-webkit-time-picker-indicator {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+
+}

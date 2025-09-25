@@ -1,0 +1,8 @@
+    <div class="images-upload-container">
+        @for (item of selectedImages; track $index) {
+        <img [src]="item" class="image-preview" />
+}
+    <input type="file" id="myImageUpload"  accept="image/*" class="hidden-image-upload-button" (change)="onImageSelected($event)" />
+        <label for="myImageUpload" class="image-upload-button">+ Add more {{ requiredImagesCount==0? '': requiredImagesCount }}</label>
+    </div>
+

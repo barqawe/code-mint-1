@@ -1,0 +1,33 @@
+@import '../../../../public/cssVars.scss';
+
+.images-upload-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    .hidden-image-upload-button {
+    display: none;
+}
+
+.image-upload-button {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: $buttons-theme-color;
+    color: $buttons-theme-color;
+    border-radius: 4px;
+    padding: 8px 12px;
+    width: 8em ;
+    height: 6em;
+    cursor: pointer;
+}
+.image-preview {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+}

@@ -1,6 +1,6 @@
 import { FormControl } from '@angular/forms';
 
 export interface TextInputConfig {
-  placeholder: string;
+  placeholder: string ;
   control: FormControl;
 }
