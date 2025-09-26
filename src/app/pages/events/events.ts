@@ -1,26 +1,35 @@
 import { Component, Inject, inject } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { TextInput } from "../../shared/text-input/text-input";
-import { TextAreaInput } from "../../shared/text-area-input/text-area-input";
-import { DateInput } from "../../shared/date-input/date-input";
-import { TimeInput } from "../../shared/time-input/time-input";
-import { ImagesUpload } from "../../shared/images-upload/images-upload";
-import { LabeledTextInput } from "../../shared/labeled-text-input/labeled-text-input";
+import { TextInput } from '../../shared/text-input/text-input';
+import { TextAreaInput } from '../../shared/text-area-input/text-area-input';
+import { DateInput } from '../../shared/date-input/date-input';
+import { TimeInput } from '../../shared/time-input/time-input';
+import { ImagesUpload } from '../../shared/images-upload/images-upload';
+import { LabeledTextInput } from '../../shared/labeled-text-input/labeled-text-input';
 import { DropDown } from '../../shared/drop-down/drop-down';
+import { AddSection } from "../../shared/add-section/add-section";
 
 @Component({
   selector: 'app-events',
-  imports: [TextInput, ReactiveFormsModule, TextAreaInput, DateInput, TimeInput, ImagesUpload, LabeledTextInput, DropDown],
+  imports: [
+    TextInput,
+    ReactiveFormsModule,
+    TextAreaInput,
+    DateInput,
+    TimeInput,
+    ImagesUpload,
+    LabeledTextInput,
+    DropDown,
+    AddSection
+],
   templateUrl: './events.html',
-  styleUrl: './events.scss'
+  styleUrl: './events.scss',
 })
 export class Events {
-
-  constructor() {
-  }
+  constructor() {}
 
   private fb = inject(FormBuilder);
-eventMediaContent: string[] = [];
+  eventMediaContent: string[] = [];
   eventForm = this.fb.group({
     eventNameEn: [''],
     eventNameAr: [''],
@@ -33,32 +42,29 @@ eventMediaContent: string[] = [];
     eventprice: ['', Validators.required],
     eventSubCategory: ['', Validators.required],
     eventAvailableQuantity: ['', Validators.required],
-    eventSections: this.fb.array([this.fb.group({
-      sectionTitle: [''],
-      sectionItems: this.fb.array([this.fb.group({
-        itemNameAr: [''],
-        itemNameEn: [''],
-      })]),
-    })]),
+    eventSections: this.fb.array([
+      this.fb.group({
+        sectionTitle: [''],
+        sectionItems: this.fb.array([]) // <-- empty array for debugging
+      }),
+    ]),
   });
 
   get eventNameEn() {
     return this.eventForm.controls.eventNameEn;
   }
 
-  
-  
+
+
+
 
   onSubmit(): void {
- 
     console.log(this.eventForm.value);
-    
   }
 
-  // i should implement its value to form builder 
+  // i should implement its value to form builder
   onImagesSelected(images: string[]): void {
     this.eventMediaContent = images;
     console.log('Selected images:', this.eventMediaContent);
-  
   }
-  }
+}

@@ -1,0 +1,56 @@
+<div class="sections-container">
+
+<div *ngFor="let section of sections; let i = index">
+  <div class="section">
+    <h1>section {{ i + 1 }}</h1>
+
+    <div class="section-title">
+      <div class="section-title-label">
+        <h1>Section title</h1>
+        <p>title of the section</p>
+
+      </div>
+      <div class="section-title-drop-down">
+        <select name="sectionTitle" [(ngModel)]="section.sectionTitle" class ="drop-down">
+          <option value="" selected>Select Section Title</option>
+          <option value="speakers">Speakers</option>
+          <option value="schedule">Schedule</option>
+          <option value="location">Location</option>
+          <option value="sponsors">Sponsors</option>
+          <option value="tickets">Tickets</option>
+        </select>
+      </div>
+    
+</div>
+  <div class="items-container" *ngFor="let item of section.sectionItems; let j = index">
+        <div class="item">
+          <div class="section-title">
+      <div class="section-title-label">
+        <h1>Title fill items</h1>
+        <p>item{{ j + 1 }}</p>
+
+      </div>
+         
+
+      </div>
+       <div class="item-input">
+            <input type="text" [(ngModel)]="item.itemNameAr" placeholder="Item Name in Arabic" class="item-input">
+            <input type="text" [(ngModel)]="item.itemNameEn" placeholder="Item Name in English" class="item-input">
+          </div>
+          <div class="delete-item-button" (click)="removeItem(i, j)">X</div>
+    </div>
+  </div>
+    <div class="add-item-button-container">
+      <button (click)="addItem(i)" class="add-item-button">+Add another Item </button>
+      </div>
+  </div>
+
+
+</div>
+<div class="add-section-button-container">
+      <button (click)="addSection()" class="add-section-button">+ Add another Section</button>
+
+</div>
+</div>
+<button (click)="logSections()">Log Sections</button>
+
