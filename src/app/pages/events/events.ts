@@ -8,6 +8,7 @@ import { ImagesUpload } from '../../shared/images-upload/images-upload';
 import { LabeledTextInput } from '../../shared/labeled-text-input/labeled-text-input';
 import { DropDown } from '../../shared/drop-down/drop-down';
 import { AddSection } from "../../shared/add-section/add-section";
+import { SwitchInput } from "../../shared/switch-input/switch-input";
 
 @Component({
   selector: 'app-events',
@@ -20,7 +21,8 @@ import { AddSection } from "../../shared/add-section/add-section";
     ImagesUpload,
     LabeledTextInput,
     DropDown,
-    AddSection
+    AddSection,
+    SwitchInput
 ],
   templateUrl: './events.html',
   styleUrl: './events.scss',
@@ -46,7 +48,7 @@ export class Events {
     eventSections: this.fb.array([
       this.fb.group({
         sectionTitle: [''],
-        sectionItems: this.fb.array([]) // <-- empty array for debugging
+        sectionItems: this.fb.array([]) 
       }),
     ]),
   });
@@ -62,7 +64,7 @@ export class Events {
 this.eventSections = sections;
   }
   onSubmit(): void {
-    console.log(this.eventSections);
+    console.log(this.eventForm.value);
   }
 
   // i should implement its value to form builder

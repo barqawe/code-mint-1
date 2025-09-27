@@ -44,14 +44,8 @@
       </div>
     </div>
 
-    <div class="event-field">
-      <div class="toggle-container">
-        <label class="toggle-switch">
-          <input type="checkbox" [formControl]="eventForm.controls.active" />
-          <span class="slider"></span>
-        </label>
-        <span class="toggle-label">Active</span>
-      </div>
+    <div class="switch-input-container">
+      <app-switch-input [formControl]="eventForm.controls.active"></app-switch-input>
     </div>
 
     <div class="event-field">
