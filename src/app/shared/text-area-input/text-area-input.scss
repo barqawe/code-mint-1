@@ -1,3 +1,4 @@
+@import '../../../../public/cssVars.scss';
 .event-text-area-input {
     width: 100%;
     min-height: 120px;
@@ -8,7 +9,7 @@
     font-size: 14px;
     line-height: 1.5;
     color: #333;
-    background-color: #F7F7F7;
+    background-color: $input-bg-color;
     resize:none;
 
     &::placeholder {

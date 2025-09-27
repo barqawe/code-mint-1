@@ -1,125 +1,141 @@
 <h2 class="event-title">Events</h2>
 <div class="event-form">
-    <header class="event-form-header">
-        <h2>Add New Event</h2>
-        <hr>
-    </header>
-    <form action="" [formGroup]="eventForm" (ngSubmit)="onSubmit()">
-        <div class="event-field">
+  <header class="event-form-header">
+    <h2>Add New Event</h2>
+    <hr />
+  </header>
+  <form action="" [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+    <div class="event-field">
+      <div class="event-field-guide">
+        <h2>Event Name</h2>
+        <p class="event-field-guide-text">add Event title that customers would likely to search</p>
+      </div>
 
-            <div class="event-field-guide">
-                <h2>Event Name</h2>
-                <p class="event-field-guide-text">add Event title that customers would likely to search </p>
-            </div>
+      <div class="event-field-inputs">
+        <app-text-input
+          [config]="{ placeholder: 'Event name(english)', control: eventForm.controls.eventNameEn }"
+        ></app-text-input>
 
-            <div class="event-field-inputs">
-                <app-text-input [config]="{ placeholder: 'Event name(english)', control: eventForm.controls.eventNameEn
-                    }"></app-text-input>
+        <app-text-input
+          [config]="{ placeholder: 'Event name(Arabic)', control: eventForm.controls.eventNameAr }"
+        ></app-text-input>
+      </div>
+    </div>
+    <div class="event-field">
+      <div class="event-field-guide">
+        <h2>Event Description</h2>
+        <p class="event-field-guide-text">
+          add Event Description that customers would likely to search
+        </p>
+      </div>
+      <div class="event-field-textAreas">
+        <app-text-area-input
+          [config]="{
+            placeholder: 'Event Description(Arabic)',
+            control: eventForm.controls.eventDescriptionAr
+          }"
+        ></app-text-area-input>
+        <app-text-area-input
+          [config]="{
+            placeholder: 'Event Description(english)',
+            control: eventForm.controls.eventDescriptionEn
+          }"
+        ></app-text-area-input>
+      </div>
+    </div>
 
-                <app-text-input [config]="{ placeholder: 'Event name(Arabic)', control: eventForm.controls.eventNameAr
-                    }"></app-text-input>
+    <div class="event-field">
+      <div class="toggle-container">
+        <label class="toggle-switch">
+          <input type="checkbox" [formControl]="eventForm.controls.active" />
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-label">Active</span>
+      </div>
+    </div>
 
+    <div class="event-field">
+      <div class="event-field-guide">
+        <h2>Event Date</h2>
+        <p class="event-field-guide-text">Select the date of the event</p>
+      </div>
+      <div class="event-field-date-input">
+        <app-date-input [config]="{ control: eventForm.controls.eventDate }"></app-date-input>
+      </div>
+    </div>
 
-            </div>
-        </div>
-        <div class="event-field">
-            <div class="event-field-guide">
-                <h2>Event Description</h2>
-                <p class="event-field-guide-text">add Event Description that customers would likely to search</p>
-            </div>
-            <div class="event-field-textAreas">
-                <app-text-area-input [config]="{ placeholder: 'Event Description(Arabic)', control: eventForm.controls.eventDescriptionAr
-                
-                    }"></app-text-area-input>
-                <app-text-area-input [config]="{ placeholder: 'Event Description(english)', control: eventForm.controls.eventDescriptionEn
-                    }"></app-text-area-input>
+    <div class="event-field">
+      <div class="event-field-guide">
+        <h2>Event Time</h2>
+        <p class="event-field-guide-text">Select the time of the event</p>
+      </div>
+      <div class="event-field-time-input">
+        <app-time-input></app-time-input>
+      </div>
+    </div>
 
+    <div class="event-field">
+      <div class="event-field-guide">
+        <h2>Media Content</h2>
+        <p class="event-field-guide-text">Add media content just images</p>
+      </div>
+      <div class="event-field-images-upload">
+        <app-images-upload (imagesSelected)="onImagesSelected($event)"></app-images-upload>
+      </div>
+    </div>
 
-            </div>
-        </div>
+    <div class="event-field">
+      <div class="event-field-guide">
+        <h2>Price</h2>
+        <p class="event-field-guide-text">Add the price of the event</p>
+      </div>
+      <div class="event-field-labeled-inputs">
+        <app-labeled-text-input
+          [config]="{
+            label: 'JOD',
+            placeholder: 'Event Price',
+            control: eventForm.controls.eventprice
+          }"
+        ></app-labeled-text-input>
+      </div>
+    </div>
 
-        <div class="event-field">
-            <div class="toggle-container">
-                <label class="toggle-switch">
-                    <input type="checkbox" [formControl]="eventForm.controls.active" />
-                    <span class="slider"></span>
-                </label>
-                <span class="toggle-label">Active</span>
-            </div>
-        </div>
+    <div class="event-field">
+      <div class="event-field-guide">
+        <h2>SubCategory</h2>
+        <p class="event-field-guide-text">Add the subcategory of the event</p>
+      </div>
+      <div class="event-field-drop-down-inputs">
+        <app-drop-down
+          [config]="{
+            options: ['Location 1', 'Location 2', 'Location 3'],
+            control: eventForm.controls.eventSubCategory,
+            placeholder: 'SubCategory'
+          }"
+        ></app-drop-down>
+      </div>
+    </div>
 
+    <div class="event-field">
+      <div class="event-field-guide">
+        <h2>Available Quantity</h2>
+        <p class="event-field-guide-text">Add the available quantity of the event</p>
+      </div>
+      <div class="event-field-drop-down-inputs">
+        <app-drop-down
+          [config]="{
+            options: ['1', '2', '3'],
+            control: eventForm.controls.eventAvailableQuantity,
+            placeholder: 'Available Quantity'
+          }"
+        ></app-drop-down>
+      </div>
+    </div>
 
-        <div class="event-field">
-            <div class="event-field-guide">
-                <h2>Event Date</h2>
-                <p class="event-field-guide-text">Select the date of the event</p>
-            </div>
-            <div class="event-field-date-input">
-                <app-date-input [config]="{ control: eventForm.controls.eventDate }"></app-date-input>
-            </div>
-        </div>
+    <div>
+      <app-add-section (sectionsChange)="onSectionsChange($event)"></app-add-section>
+    </div>
 
-
-        <div class="event-field">
-            <div class="event-field-guide">
-                <h2>Event Time</h2>
-                <p class="event-field-guide-text">Select the time of the event</p>
-            </div>
-            <div class="event-field-time-input">
-                <app-time-input></app-time-input>
-            </div>
-        </div>
-
-        <div class="event-field">
-            <div class="event-field-guide">
-                <h2>Media Content</h2>
-                <p class="event-field-guide-text">Add media content just images </p>
-            </div>
-            <div class="event-field-images-upload">
-                <app-images-upload (imagesSelected)="onImagesSelected($event)" ></app-images-upload>
-
-            </div>
-        </div>
-
-        <div class="event-field">
-            <div class="event-field-guide">
-                <h2>Price</h2>
-                <p class="event-field-guide-text">Add the price of the event</p>
-            </div>
-            <div class="event-field-labeled-inputs">
-            <app-labeled-text-input [config]="{ label: 'JOD', placeholder: 'Event Price', control: eventForm.controls.eventprice }"></app-labeled-text-input>
-            </div>
-
-        </div>
-
-
-       <div class="event-field">
-            <div class="event-field-guide">
-                <h2>SubCategory</h2>
-                <p class="event-field-guide-text">Add the subcategory of the event</p>
-            </div>
-            <div class="event-field-labeled-inputs">
-                <app-drop-down [config]="{ options: ['Location 1', 'Location 2', 'Location 3'], control: eventForm.controls.eventSubCategory , placeholder: 'SubCategory'} "></app-drop-down>
-            </div>
-        </div>
-
-
-         <div class="event-field">
-            <div class="event-field-guide">
-                <h2>Available Quantity</h2>
-                <p class="event-field-guide-text">Add the available quantity of the event</p>
-            </div>
-            <div class="event-field-labeled-inputs">
-                <app-drop-down [config]="{ options: ['1', '2', '3'], control: eventForm.controls.eventAvailableQuantity , placeholder: 'Available Quantity'} "></app-drop-down>
-            </div>
-        </div>
-
-
-        <div>
-          <app-add-section></app-add-section>
-        </div>
-
-        <button type="submit">Submit</button>
-    </form>
-
+    <button type="submit">Submit</button>
+  </form>
 </div>

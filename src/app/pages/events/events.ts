@@ -29,6 +29,7 @@ export class Events {
   constructor() {}
 
   private fb = inject(FormBuilder);
+  eventSections: any[] = [];
   eventMediaContent: string[] = [];
   eventForm = this.fb.group({
     eventNameEn: [''],
@@ -57,14 +58,15 @@ export class Events {
 
 
 
-
+  onSectionsChange(sections: any[]): void {
+this.eventSections = sections;
+  }
   onSubmit(): void {
-    console.log(this.eventForm.value);
+    console.log(this.eventSections);
   }
 
   // i should implement its value to form builder
   onImagesSelected(images: string[]): void {
     this.eventMediaContent = images;
-    console.log('Selected images:', this.eventMediaContent);
   }
 }

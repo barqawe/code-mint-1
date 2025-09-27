@@ -2,7 +2,8 @@
 
 <div *ngFor="let section of sections; let i = index">
   <div class="section">
-    <h1>section {{ i + 1 }}</h1>
+    <h1>Extra sections (section {{ i + 1 }})</h1>
+    <hr>
 
     <div class="section-title">
       <div class="section-title-label">
@@ -11,7 +12,7 @@
 
       </div>
       <div class="section-title-drop-down">
-        <select name="sectionTitle" [(ngModel)]="section.sectionTitle" class ="drop-down">
+        <select name="sectionTitle" [(ngModel)]="section.sectionTitle" class ="drop-down" (ngModelChange)="emitSections()">
           <option value="" selected>Select Section Title</option>
           <option value="speakers">Speakers</option>
           <option value="schedule">Schedule</option>
@@ -33,9 +34,9 @@
          
 
       </div>
-       <div class="item-input">
-            <input type="text" [(ngModel)]="item.itemNameAr" placeholder="Item Name in Arabic" class="item-input">
-            <input type="text" [(ngModel)]="item.itemNameEn" placeholder="Item Name in English" class="item-input">
+       <div class="item-input-container">
+            <input type="text" [(ngModel)]="item.itemNameAr" placeholder="Item Name in Arabic" class="item-input" (ngModelChange)="emitSections()">
+            <input type="text" [(ngModel)]="item.itemNameEn" placeholder="Item Name in English" class="item-input" (ngModelChange)="emitSections()">
           </div>
           <div class="delete-item-button" (click)="removeItem(i, j)">X</div>
     </div>
@@ -52,5 +53,4 @@
 
 </div>
 </div>
-<button (click)="logSections()">Log Sections</button>
 

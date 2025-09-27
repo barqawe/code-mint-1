@@ -1,17 +1,16 @@
-import { Component, inject, Input } from '@angular/core';
-import { Section } from './interfaces/section.interface';
-import { FormArray, FormGroup } from '@angular/forms';
-import { DropDown } from '../drop-down/drop-down';
+import { Component, inject, Input, Output, EventEmitter } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-add-section',
-  imports: [DropDown, CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './add-section.html',
   styleUrl: './add-section.scss',
 })
 export class AddSection {
+  @Output() sectionsChange = new EventEmitter<any[]>();
   sections = [
     {
       sectionId: 0,
@@ -37,9 +36,13 @@ export class AddSection {
   }
 
   addSection() {
-    this.sections.push({ sectionId: this.sections.length, sectionTitle: '', sectionItems: [] });
+    this.sections.push({ sectionId: this.sections.length, sectionTitle: '', sectionItems: [{
+      itemNameAr: '',
+      itemNameEn: '',
+    }] });
   }
-  logSections() {
-  console.log(this.sections);
-}
+
+  emitSections() {
+    this.sectionsChange.emit(this.sections);
+  }
 }
