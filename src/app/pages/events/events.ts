@@ -7,7 +7,6 @@ import { TimeInput } from '../../shared/time-input/time-input';
 import { ImagesUpload } from '../../shared/images-upload/images-upload';
 import { LabeledTextInput } from '../../shared/labeled-text-input/labeled-text-input';
 import { DropDown } from '../../shared/drop-down/drop-down';
-import { AddSection } from "../../shared/add-section/add-section";
 import { SwitchInput } from "../../shared/switch-input/switch-input";
 
 @Component({
@@ -21,7 +20,6 @@ import { SwitchInput } from "../../shared/switch-input/switch-input";
     ImagesUpload,
     LabeledTextInput,
     DropDown,
-    AddSection,
     SwitchInput
   ],
   templateUrl: './events.html',
@@ -59,26 +57,6 @@ export class Events {
 
 
 
-  onSectionsChange(sections: any[]): void {
-    this.eventSections = sections;
-    const sectionsFormArray = this.fb.array(
-      sections.map(section =>
-        this.fb.group({
-          sectionTitle: [section.sectionTitle || ''],
-          sectionItems: this.fb.array(
-            section.sectionItems?.map((item: any) =>
-              this.fb.group({
-                itemNameAr: [item.itemNameAr || ''],
-                itemNameEn: [item.itemNameEn || '']
-              })
-            ) || []
-          )
-        })
-      )
-    );
-
-    this.eventForm.setControl('eventSections', sectionsFormArray);
-  }
   onSubmit(): void {
     console.log('Event Sections (property):', this.eventSections);
     console.log('Event Sections (form):', this.eventForm.controls.eventSections.value);
@@ -89,4 +67,26 @@ export class Events {
   onImagesSelected(images: string[]): void {
     this.eventMediaContent = images;
   }
+
+
+
+  removeItem(sectionIndex: number, itemIndex: number) {
+    this.eventSections[sectionIndex].sectionItems.splice(itemIndex, 1);
+  }
+
+  addItem(sectionIndex: number) {
+    this.eventSections[sectionIndex].sectionItems.push({
+      itemNameAr: '',
+      itemNameEn: '',
+    });
+  }
+
+  addSection() {
+    this.eventSections.push({ sectionId: this.eventSections.length, sectionTitle: '', sectionItems: [{
+      itemNameAr: '',
+      itemNameEn: '',
+    }] });
+  }
+
+
 }
