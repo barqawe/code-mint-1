@@ -41,7 +41,6 @@ export class Events {
     eventDate: [''],
     eventTime: [''],
     active: [true],
-    eventMediaContent: this.fb.array([], Validators.required),
     eventprice: ['', Validators.required],
     eventSubCategory: ['', Validators.required],
     eventAvailableQuantity: ['', Validators.required],

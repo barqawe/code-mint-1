@@ -43,7 +43,6 @@ export class AddSection implements OnInit {
   }
 
   ngOnInit() {
-    // Emit initial sections when component loads
     this.emitSections();
   }
 
