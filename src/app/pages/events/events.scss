@@ -230,5 +230,14 @@
     }
   }
 }
+.extra-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .extra-section-label{
+    h1{font-weight: bold;}
+    p{font-weight: normal; color:#bebebe;}
+  }
+}
 
 }

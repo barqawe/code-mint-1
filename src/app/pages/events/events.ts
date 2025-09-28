@@ -20,8 +20,8 @@ import { SwitchInput } from "../../shared/switch-input/switch-input";
     ImagesUpload,
     LabeledTextInput,
     DropDown,
-    SwitchInput
-  ],
+    SwitchInput,
+],
   templateUrl: './events.html',
   styleUrl: './events.scss',
 })
@@ -42,12 +42,18 @@ export class Events {
     eventprice: ['', Validators.required],
     eventSubCategory: ['', Validators.required],
     eventAvailableQuantity: ['', Validators.required],
-    eventSections: this.fb.array([
-      this.fb.group({
-        sectionTitle: [''],
-        sectionItems: this.fb.array([])
-      }),
-    ]),
+    requirements: this.fb.array([this.fb.group({
+      itemNameEn: ['', Validators.required],
+      itemNameAr: ['', Validators.required],
+    })]),
+    benefits: this.fb.array([this.fb.group({
+      itemNameEn: ['', Validators.required],
+      itemNameAr: ['', Validators.required],
+    })]),
+    restrictions: this.fb.array([this.fb.group({
+      itemNameEn: ['', Validators.required],
+      itemNameAr: ['', Validators.required],
+    })]),
   });
 
   get eventNameEn() {
@@ -58,8 +64,6 @@ export class Events {
 
 
   onSubmit(): void {
-    console.log('Event Sections (property):', this.eventSections);
-    console.log('Event Sections (form):', this.eventForm.controls.eventSections.value);
     console.log('Complete Form:', this.eventForm.value);
   }
 
@@ -70,23 +74,10 @@ export class Events {
 
 
 
-  removeItem(sectionIndex: number, itemIndex: number) {
-    this.eventSections[sectionIndex].sectionItems.splice(itemIndex, 1);
-  }
 
-  addItem(sectionIndex: number) {
-    this.eventSections[sectionIndex].sectionItems.push({
-      itemNameAr: '',
-      itemNameEn: '',
-    });
-  }
 
-  addSection() {
-    this.eventSections.push({ sectionId: this.eventSections.length, sectionTitle: '', sectionItems: [{
-      itemNameAr: '',
-      itemNameEn: '',
-    }] });
-  }
+
+
 
 
 }
