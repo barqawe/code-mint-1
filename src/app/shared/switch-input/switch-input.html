@@ -1,7 +1,7 @@
   <div class="toggle-container">
         <label class="toggle-switch">
-          <input type="checkbox" [formControl]="formControl" />
+          <input type="checkbox" class="toggle-input" [formControl]="config.control" />
           <span class="slider"></span>
         </label>
-        <span class="toggle-label">{{formControl.value ? 'Active' : 'Inactive'}}</span>
+        <span class="toggle-label">{{config.control.value ? 'Active' : 'Inactive'}}</span>
       </div>

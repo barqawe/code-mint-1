@@ -13,12 +13,10 @@
 
       <div class="event-field-inputs">
         <app-text-input
-          [config]="{ placeholder: 'Event name(english)', control: eventForm.controls.eventNameEn }"
-        ></app-text-input>
+          [config]="{ placeholder: 'Event name(english)', control: eventForm.controls.eventNameEn }"></app-text-input>
 
         <app-text-input
-          [config]="{ placeholder: 'Event name(Arabic)', control: eventForm.controls.eventNameAr }"
-        ></app-text-input>
+          [config]="{ placeholder: 'Event name(Arabic)', control: eventForm.controls.eventNameAr }"></app-text-input>
       </div>
     </div>
     <div class="event-field">
@@ -29,23 +27,19 @@
         </p>
       </div>
       <div class="event-field-textAreas">
-        <app-text-area-input
-          [config]="{
+        <app-text-area-input [config]="{
             placeholder: 'Event Description(Arabic)',
             control: eventForm.controls.eventDescriptionAr
-          }"
-        ></app-text-area-input>
-        <app-text-area-input
-          [config]="{
+          }"></app-text-area-input>
+        <app-text-area-input [config]="{
             placeholder: 'Event Description(english)',
             control: eventForm.controls.eventDescriptionEn
-          }"
-        ></app-text-area-input>
+          }"></app-text-area-input>
       </div>
     </div>
 
     <div class="switch-input-container">
-      <app-switch-input [formControl]="eventForm.controls.active"></app-switch-input>
+      <app-switch-input [config]="{ control: eventForm.controls.active }"></app-switch-input>
     </div>
 
     <div class="event-field">
@@ -64,7 +58,7 @@
         <p class="event-field-guide-text">Select the time of the event</p>
       </div>
       <div class="event-field-time-input">
-        <app-time-input></app-time-input>
+        <app-time-input [config]="{ control: eventForm.controls.eventTime }"></app-time-input>
       </div>
     </div>
 
@@ -84,13 +78,11 @@
         <p class="event-field-guide-text">Add the price of the event</p>
       </div>
       <div class="event-field-labeled-inputs">
-        <app-labeled-text-input
-          [config]="{
+        <app-labeled-text-input [config]="{
             label: 'JOD',
             placeholder: 'Event Price',
             control: eventForm.controls.eventprice
-          }"
-        ></app-labeled-text-input>
+          }"></app-labeled-text-input>
       </div>
     </div>
 
@@ -100,13 +92,11 @@
         <p class="event-field-guide-text">Add the subcategory of the event</p>
       </div>
       <div class="event-field-drop-down-inputs">
-        <app-drop-down
-          [config]="{
+        <app-drop-down [config]="{
             options: ['Location 1', 'Location 2', 'Location 3'],
             control: eventForm.controls.eventSubCategory,
             placeholder: 'SubCategory'
-          }"
-        ></app-drop-down>
+          }"></app-drop-down>
       </div>
     </div>
 
@@ -116,13 +106,11 @@
         <p class="event-field-guide-text">Add the available quantity of the event</p>
       </div>
       <div class="event-field-drop-down-inputs">
-        <app-drop-down
-          [config]="{
+        <app-drop-down [config]="{
             options: ['1', '2', '3'],
             control: eventForm.controls.eventAvailableQuantity,
             placeholder: 'Available Quantity'
-          }"
-        ></app-drop-down>
+          }"></app-drop-down>
       </div>
     </div>
 

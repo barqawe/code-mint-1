@@ -23,12 +23,12 @@ import { SwitchInput } from "../../shared/switch-input/switch-input";
     DropDown,
     AddSection,
     SwitchInput
-],
+  ],
   templateUrl: './events.html',
   styleUrl: './events.scss',
 })
 export class Events {
-  constructor() {}
+  constructor() { }
 
   private fb = inject(FormBuilder);
   eventSections: any[] = [];
@@ -48,7 +48,7 @@ export class Events {
     eventSections: this.fb.array([
       this.fb.group({
         sectionTitle: [''],
-        sectionItems: this.fb.array([]) 
+        sectionItems: this.fb.array([])
       }),
     ]),
   });
@@ -61,13 +61,32 @@ export class Events {
 
 
   onSectionsChange(sections: any[]): void {
-this.eventSections = sections;
+    this.eventSections = sections;
+    const sectionsFormArray = this.fb.array(
+      sections.map(section =>
+        this.fb.group({
+          sectionTitle: [section.sectionTitle || ''],
+          sectionItems: this.fb.array(
+            section.sectionItems?.map((item: any) =>
+              this.fb.group({
+                itemNameAr: [item.itemNameAr || ''],
+                itemNameEn: [item.itemNameEn || '']
+              })
+            ) || []
+          )
+        })
+      )
+    );
+
+    this.eventForm.setControl('eventSections', sectionsFormArray);
   }
   onSubmit(): void {
-    console.log(this.eventForm.value);
+    console.log('Event Sections (property):', this.eventSections);
+    console.log('Event Sections (form):', this.eventForm.controls.eventSections.value);
+    console.log('Complete Form:', this.eventForm.value);
   }
 
-  // i should implement its value to form builder
+  // i should implement its value to form Group 
   onImagesSelected(images: string[]): void {
     this.eventMediaContent = images;
   }

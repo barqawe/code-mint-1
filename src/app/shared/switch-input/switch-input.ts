@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SwitchInputConfig } from './interfaces/switch-input.interface';
 
 @Component({
   selector: 'app-switch-input',
@@ -8,6 +9,5 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrl: './switch-input.scss'
 })
 export class SwitchInput {
-@Input() formControl: any;
-
+  @Input() config!: SwitchInputConfig;
 }

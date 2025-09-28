@@ -1,4 +1,4 @@
-import { Component, inject, Input, Output, EventEmitter } from '@angular/core';
+import { Component, inject, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './add-section.html',
   styleUrl: './add-section.scss',
 })
-export class AddSection {
+export class AddSection implements OnInit {
   @Output() sectionsChange = new EventEmitter<any[]>();
   sections = [
     {
@@ -40,6 +40,11 @@ export class AddSection {
       itemNameAr: '',
       itemNameEn: '',
     }] });
+  }
+
+  ngOnInit() {
+    // Emit initial sections when component loads
+    this.emitSections();
   }
 
   emitSections() {

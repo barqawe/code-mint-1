@@ -2,14 +2,15 @@
 
 .drop-down {
     width: 100%;
-    height: 55px;
+    height: $input-height;
     padding: 0 12px;
-    font-size: 16px;
+    font-size: $font-size-small;
     border: none;
-    border-radius: 8px;
+    border-radius: $border-radius-standard;
     background-color: $input-bg-color;
     color: $input-text-color;
     cursor: pointer;
+    outline: none;
     appearance: none;
 
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"></polyline></svg>');
