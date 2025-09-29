@@ -21,7 +21,7 @@
       width: 0;
       height: 0;
 
-      &:checked + .slider {
+      &:checked + .slider  {
         background-color: #4caf50;
 
         &:before {
@@ -37,7 +37,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #ccc;
+      background-color: #ff2424;
       transition: 0.3s;
       border-radius: 24px;
 

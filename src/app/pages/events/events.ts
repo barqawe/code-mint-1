@@ -1,5 +1,5 @@
 import { Component, Inject, inject } from '@angular/core';
-import { FormBuilder, FormArray, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormArray, FormGroup, ReactiveFormsModule, Validators ,FormControl} from '@angular/forms';
 import { TextInput } from '../../shared/text-input/text-input';
 import { TextAreaInput } from '../../shared/text-area-input/text-area-input';
 import { DateInput } from '../../shared/date-input/date-input';
@@ -21,6 +21,7 @@ import { SwitchInput } from "../../shared/switch-input/switch-input";
     LabeledTextInput,
     DropDown,
     SwitchInput,
+    
 ],
   templateUrl: './events.html',
   styleUrl: './events.scss',
@@ -42,26 +43,25 @@ export class Events {
     eventprice: ['', Validators.required],
     eventSubCategory: ['', Validators.required],
     eventAvailableQuantity: ['', Validators.required],
-    requirements: this.fb.array([this.fb.group({
-      itemNameEn: ['', Validators.required],
-      itemNameAr: ['', Validators.required],
-    })]),
-    benefits: this.fb.array([this.fb.group({
-      itemNameEn: ['', Validators.required],
-      itemNameAr: ['', Validators.required],
-    })]),
-    restrictions: this.fb.array([this.fb.group({
-      itemNameEn: ['', Validators.required],
-      itemNameAr: ['', Validators.required],
-    })]),
+    requirements: this.fb.array([]),
+    benefits: this.fb.array([]),
+    restrictions: this.fb.array([]),
   });
 
   get eventNameEn() {
     return this.eventForm.controls.eventNameEn;
   }
-
-
-
+  addItem(formArrayName: string): void {
+    const formArray = this.eventForm.get(formArrayName) as FormArray;
+    formArray.push(this.fb.group({
+      itemNameEn:  ['', Validators.required],
+      itemNameAr: ['', Validators.required],
+    }));
+  }
+  delete(formArrayItem:string, index:number):void {
+    const formArray = this.eventForm.get(formArrayItem) as FormArray;
+    formArray.removeAt(index);
+  }
 
   onSubmit(): void {
     console.log('Complete Form:', this.eventForm.value);

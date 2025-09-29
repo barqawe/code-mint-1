@@ -119,13 +119,109 @@
         <p>add requirements for the event</p>
       </div>
       <div class="extra-section-items">
-        @for (item of eventForm.controls.requirements.controls; track item) {
-          
-          
+        @for (item of eventForm.controls.requirements.controls; track $index) {
+
+        <div class="item">
+          <div class="section-title">
+            <div class="section-title-label">
+              <h1>Title fill items</h1>
+              <p>item{{ $index + 1 }}</p>
+
+            </div>
+
+
+          </div>
+          <div class="item-input-container">
+            <input type="text" placeholder="Item Name in Arabic" class="item-input" [formControl]="$any(eventForm.controls.requirements.controls[$index]).controls.itemNameAr">
+            <input type="text" placeholder="Item Name in English" class="item-input" [formControl]="$any(eventForm.controls.requirements.controls[$index]).controls.itemNameEn">
+          </div>
+          <div class="delete-item-button" (click)="delete('requirements', $index)">X</div>
+        </div>
+
+
         }
+        <div class="add-item-button-container">
+          <button type="button" class="add-item-button" (click)="addItem('requirements')">+Add another Item </button>
+        </div>
       </div>
 
     </div>
+
+
+
+    <div class="extra-section">
+      <div class="extra-section-label">
+        <h1>Benefits</h1>
+        <p>add benefits for the event</p>
+      </div>
+      <div class="extra-section-items">
+        @for (item of eventForm.controls.benefits.controls; track $index) {
+
+        <div class="item">
+          <div class="section-title">
+            <div class="section-title-label">
+              <h1>Title fill items</h1>
+              <p>item{{ $index + 1 }}</p>
+
+            </div>
+
+
+          </div>
+          <div class="item-input-container">
+            <input type="text" placeholder="Item Name in Arabic" class="item-input" [formControl]="$any(eventForm.controls.benefits.controls[$index]).controls.itemNameAr">
+            <input type="text" placeholder="Item Name in English" class="item-input" [formControl]="$any(eventForm.controls.benefits.controls[$index]).controls.itemNameEn">
+          </div>
+          <div class="delete-item-button" (click)="delete('benefits', $index)">X</div>
+        </div>
+
+
+        }
+        <div class="add-item-button-container">
+          <button type="button" class="add-item-button" (click)="addItem('benefits')">+Add another Item </button>
+        </div>
+      </div>
+
+
+      <div class="extra-section">
+        <div class="extra-section-label">
+          <h1>restrictions</h1>
+          <p>add restrictions for the event</p>
+        </div>
+        <div class="extra-section-items">
+          @for (item of eventForm.controls.restrictions.controls; track $index) {
+
+          <div class="item">
+            <div class="section-title">
+              <div class="section-title-label">
+                <h1>Title fill items</h1>
+                <p>item{{ $index + 1 }}</p>
+
+              </div>
+
+
+            </div>
+            <div class="item-input-container">
+              <input type="text" placeholder="Item Name in Arabic" class="item-input" [formControl]="$any(eventForm.controls.restrictions.controls[$index]).controls.itemNameAr">
+              <input type="text" placeholder="Item Name in English" class="item-input" [formControl]="$any(eventForm.controls.restrictions.controls[$index]).controls.itemNameEn">
+            </div>
+            <div class="delete-item-button" (click)="delete('restrictions', $index)">X</div>
+          </div>
+
+
+          }
+          <div class="add-item-button-container">
+            <button type="button" class="add-item-button" (click)="addItem('restrictions')">+Add another Item </button>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+
 
     <button type="submit">Submit</button>
   </form>
