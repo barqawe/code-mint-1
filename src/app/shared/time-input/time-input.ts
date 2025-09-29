@@ -10,4 +10,8 @@ import { TimeInputConfig } from './interfaces/time-input.interface';
 })
 export class TimeInput {
   @Input() config!: TimeInputConfig;
+
+  openTimePicker(inputElement: HTMLInputElement): void {
+    inputElement.showPicker();
+  }
 }

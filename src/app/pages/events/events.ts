@@ -21,7 +21,6 @@ import { SwitchInput } from "../../shared/switch-input/switch-input";
     LabeledTextInput,
     DropDown,
     SwitchInput,
-    
 ],
   templateUrl: './events.html',
   styleUrl: './events.scss',
@@ -64,7 +63,20 @@ export class Events {
   }
 
   onSubmit(): void {
-    console.log('Complete Form:', this.eventForm.value);
+    if(this.eventForm.valid){
+      const filteredData = Object.fromEntries(
+        Object.entries(this.eventForm.value).filter(([key, value]) => 
+          value !== '' && value !== null && value !== undefined && 
+          !(Array.isArray(value) && value.length === 0)
+        )
+      );
+
+      console.log('th data of the Form :', filteredData);
+      console.log('Event Media Content:', this.eventMediaContent);
+    }
+    else {
+      console.log('Form is invalid');
+    }
   }
 
   // i should implement its value to form Group 

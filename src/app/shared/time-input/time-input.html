@@ -1,1 +1,1 @@
-<input type="time" class="time-input" [formControl]="config.control">
+<input type="time" class="time-input" [formControl]="config.control" #timeInput (click)="openTimePicker(timeInput)">

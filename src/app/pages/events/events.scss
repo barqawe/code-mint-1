@@ -319,5 +319,104 @@
         font-weight: bolder;
       }
   }
+  .form-buttons-container{
+    display:flex; 
+    justify-content: end;
+    margin-top: 2em;
+    padding-right: 3em;
+    .submit-button{
+      background-color: $buttons-theme-color;
+      border :none ; 
+      border-radius: $border-radius-standard;
+      padding: 1em;
+      color: white;
+      width: 9em;
+      cursor: pointer;
+     
+    }
+    .cancel-button{
+      background-color: transparent;
+      border :solid 1px $buttons-theme-color ; 
+      border-radius: $border-radius-standard;
+      padding: 1em;
+      color: $buttons-theme-color;
+      width: 9em;
+      margin-right: 1em;
+      cursor: pointer;
+  }
+}
 
+}
+
+@media screen and (max-width: 768px) {
+  .event-form {
+    padding: 15px;
+    margin: 10px;
+
+    .event-field {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .event-field-guide {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+
+      .switch-input-container,
+      .event-field-inputs,
+      .event-field-labeled-inputs,
+      .event-field-drop-down-inputs,
+      .event-field-textAreas,
+      .event-field-date-input,
+      .event-field-time-input,
+      .event-field-images-upload {
+        width: 100%;
+        padding: 0;
+        padding-top: 10px;
+      }
+    }
+
+    .sections-container {
+      .section {
+        padding: 1em;
+
+        .section-title {
+          flex-direction: column;
+          align-items: flex-start;
+
+          .section-title-label {
+            width: 100%;
+          }
+
+          .section-title-drop-down {
+            width: 100%;
+
+            .drop-down {
+              width: 100%;
+            }
+          }
+        }
+
+        .item {
+          flex-direction: column;
+          align-items: flex-start;
+
+          .item-input-container {
+            width: 100%;
+
+            .item-input {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .add-item-button-container,
+      .add-section-button-container {
+        justify-content: center;
+        padding: 0;
+      }
+    }
+  }
 }
