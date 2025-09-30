@@ -1,15 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, Output,EventEmitter } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-side-menu',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './side-menu.html',
   styleUrl: './side-menu.scss'
 })
 export class SideMenu {
-  isOpen:boolean = true;
+  @Output() toggle = new EventEmitter<boolean>();
+  isOpen:boolean = false;
   toggleMenu() {
     this.isOpen = !this.isOpen;
+    this.toggle.emit(this.isOpen);
+  }
   }
 
-}
+

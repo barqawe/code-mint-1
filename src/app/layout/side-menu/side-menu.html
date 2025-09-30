@@ -1,4 +1,4 @@
-<aside class="side-menu">
+<aside class="side-menu " [ngClass]="{'closed': !isOpen}">
     <header class="side-menu-header">
         <div class="side-menu-logo">
             <img src="/side-menu-icons/full-eduminty-logo.svg" alt="App Logo" class="logo-image" width="100px" />
@@ -11,35 +11,28 @@
         </div>
 
     </header>
-    <nav>
+    <nav class="side-menu-top-buttons">
         <ul class="side-menu-buttons">
-            <li><button class="side-menu-button"><img src="/side-menu-icons/non-active-graduate-attributes.svg" alt=""
-                        width="19px" height="19px">Grad Attributes </button></li>
-            <li><button class="side-menu-button"><img src="/side-menu-icons/non-active-national-qualifications-framework-descriptors.svg" alt=""
-                        width="19px" height="19px">NQF Descriptors </button></li>
-            <li><button class="side-menu-button"><img src="/side-menu-icons/non-active-evaluation-criterion.svg" alt=""
-                        width="19px" height="19px">Evaluation criterion </button></li>
-            <li><button class="side-menu-button"><img src="/side-menu-icons/non-active-program.svg" alt=""
-                        width="19px" height="19px">Programs </button></li>
-            <li><button class="side-menu-button"><img src="/side-menu-icons/non-active-course.svg" alt=""
-                        width="19px" height="19px">Courses </button></li>
-            <li><button class="side-menu-button"><img src="/side-menu-icons/non-active-graduate-attributes.svg" alt=""
-                        width="19px" height="19px">C.Sections</button></li>
+            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-graduate-attributes.svg" alt=""><span class="button-text">Grad Attributes</span></button></li>
+            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-national-qualifications-framework-descriptors.svg" alt=""><span class="button-text">NQF Descriptors</span></button></li>
+            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-evaluation-criterion.svg" alt=""><span class="button-text">Evaluation criterion</span></button></li>
+            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-program.svg" alt=""><span class="button-text">Programs</span></button></li>
+            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-course.svg" alt=""><span class="button-text">Courses</span></button></li>
+            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-graduate-attributes.svg" alt=""><span class="button-text">C.Sections</span></button></li>
 
         </ul>
     </nav>
 
 
-    <hr class="divider">
 
-    <nav >
+    <nav class="side-menu-bottom-buttons">
+            <hr class="divider">
+
+        
         <ul class="side-menu-buttons">
-            <li><button class="side-menu-button"><img src="/side-menu-icons/mintyhub.svg" alt=""
-                        width="19px" height="19px">MintyHub </button></li>
-            <li><button class="side-menu-button"><img src="/side-menu-icons/ar-translate.svg" alt=""
-                        width="19px" height="19px">عربي </button></li>
-            <li><button class="side-menu-button"><img src="/side-menu-icons/logout.svg" alt=""
-                        width="19px" height="19px">Logout </button></li>
+            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/mintyhub.svg" alt=""><span class="button-text">MintyHub</span></button></li>
+            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/ar-translate.svg" alt=""><span class="button-text">عربي</span></button></li>
+            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/logout.svg" alt=""><span class="button-text">Logout</span></button></li>
 
         </ul>
     </nav>
