@@ -1,14 +1,15 @@
-@import '../../../../public/cssVars.scss';
+@import '../../../../public/colors.scss';
+@import '../../../../public/font-sizes.scss';
 
 .labeled-text-input-container {
     position: relative;
     display: block;
-    margin: 15px;
+    width: 100%;
 
     .labeled-text-input {
         width: 100%;
         height: $input-height;
-        padding: 0 80px 0 12px;
+        padding: 0 50px 0 12px; // Added right padding to accommodate the label
         border: none;
         border-radius: $border-radius-standard;
         font-size: $font-size-small;

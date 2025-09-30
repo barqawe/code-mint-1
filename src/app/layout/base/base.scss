@@ -1,0 +1,10 @@
+.base-layout {
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+    .side-menu {
+       width: 250px;
+       height: 100%;
+
+    }
+}

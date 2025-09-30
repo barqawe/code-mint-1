@@ -1,32 +1,32 @@
 <h2 class="event-title">Events</h2>
-<div class="event-form">
+<article class="event-form">
   <header class="event-form-header">
     <h2>Add New Event</h2>
     <hr />
   </header>
-  <form action="" [formGroup]="eventForm" (ngSubmit)="onSubmit()">
-    <div class="event-field">
-      <div class="event-field-guide">
+  <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+    <section class="event-field">
+      <div class="event-field-title">
         <h2>Event Name</h2>
-        <p class="event-field-guide-text">add Event title that customers would likely to search</p>
+        <p class="event-field-subtitle">add Event title that customers would likely to search</p>
       </div>
 
-      <div class="event-field-inputs">
+      <div class="event-field-input-container">
         <app-text-input
           [config]="{ placeholder: 'Event name(english)', control: eventForm.controls.eventNameEn }"></app-text-input>
 
         <app-text-input
           [config]="{ placeholder: 'Event name(Arabic)', control: eventForm.controls.eventNameAr }"></app-text-input>
       </div>
-    </div>
-    <div class="event-field">
-      <div class="event-field-guide">
+    </section>
+    <section class="event-field">
+      <div class="event-field-title">
         <h2>Event Description</h2>
-        <p class="event-field-guide-text">
+        <p class="event-field-subtitle">
           add Event Description that customers would likely to search
         </p>
       </div>
-      <div class="event-field-textAreas">
+      <div class="event-field-input-container">
         <app-text-area-input [config]="{
             placeholder: 'Event Description(Arabic)',
             control: eventForm.controls.eventDescriptionAr
@@ -36,94 +36,94 @@
             control: eventForm.controls.eventDescriptionEn
           }"></app-text-area-input>
       </div>
-    </div>
+    </section>
 
-    <div class="switch-input-container">
+    <section class="event-field-input-container switch-container">
       <app-switch-input [config]="{ control: eventForm.controls.active }"></app-switch-input>
-    </div>
+    </section>
 
-    <div class="event-field">
-      <div class="event-field-guide">
+    <section class="event-field">
+      <div class="event-field-title">
         <h2>Event Date</h2>
-        <p class="event-field-guide-text">Select the date of the event</p>
+        <p class="event-field-subtitle">Select the date of the event</p>
       </div>
-      <div class="event-field-date-input">
+      <div class="event-field-input-container single-input">
         <app-date-input [config]="{ control: eventForm.controls.eventDate }"></app-date-input>
       </div>
-    </div>
+    </section>
 
-    <div class="event-field">
-      <div class="event-field-guide">
+    <section class="event-field">
+      <div class="event-field-title">
         <h2>Event Time</h2>
-        <p class="event-field-guide-text">Select the time of the event</p>
+        <p class="event-field-subtitle">Select the time of the event</p>
       </div>
-      <div class="event-field-time-input">
+      <div class="event-field-input-container single-input">
         <app-time-input [config]="{ control: eventForm.controls.eventTime }"></app-time-input>
       </div>
-    </div>
+    </section>
 
-    <div class="event-field">
-      <div class="event-field-guide">
+    <section class="event-field">
+      <div class="event-field-title">
         <h2>Media Content</h2>
-        <p class="event-field-guide-text">Add media content just images</p>
+        <p class="event-field-subtitle">Add media content just images</p>
       </div>
-      <div class="event-field-images-upload">
+      <div class="event-field-input-container">
         <app-images-upload (imagesSelected)="onImagesSelected($event)"></app-images-upload>
       </div>
-    </div>
+    </section>
 
-    <div class="event-field">
-      <div class="event-field-guide">
+    <section class="event-field">
+      <div class="event-field-title">
         <h2>Price</h2>
-        <p class="event-field-guide-text">Add the price of the event</p>
+        <p class="event-field-subtitle">Add the price of the event</p>
       </div>
-      <div class="event-field-labeled-inputs">
+      <div class="event-field-input-container">
         <app-labeled-text-input [config]="{
             label: 'JOD',
             placeholder: 'Event Price',
             control: eventForm.controls.eventprice
           }"></app-labeled-text-input>
       </div>
-    </div>
+    </section>
 
-    <div class="event-field">
-      <div class="event-field-guide">
+    <section class="event-field">
+      <div class="event-field-title">
         <h2>SubCategory</h2>
-        <p class="event-field-guide-text">Add the subcategory of the event</p>
+        <p class="event-field-subtitle">Add the subcategory of the event</p>
       </div>
-      <div class="event-field-drop-down-inputs">
+      <div class="event-field-input-container">
         <app-drop-down [config]="{
             options: ['Location 1', 'Location 2', 'Location 3'],
             control: eventForm.controls.eventSubCategory,
             placeholder: 'SubCategory'
           }"></app-drop-down>
       </div>
-    </div>
+    </section>
 
-    <div class="event-field">
-      <div class="event-field-guide">
+    <section class="event-field">
+      <div class="event-field-title">
         <h2>Available Quantity</h2>
-        <p class="event-field-guide-text">Add the available quantity of the event</p>
+        <p class="event-field-subtitle">Add the available quantity of the event</p>
       </div>
-      <div class="event-field-drop-down-inputs">
+      <div class="event-field-input-container">
         <app-drop-down [config]="{
             options: ['1', '2', '3'],
             control: eventForm.controls.eventAvailableQuantity,
             placeholder: 'Available Quantity'
           }"></app-drop-down>
       </div>
-    </div>
-    <div class="extra-section">
-      <div class="extra-section-label">
-        <h1>requirements</h1>
-        <p>add requirements for the event</p>
+    </section>
+    <section class="extra-title">
+      <div class="extra-title-label">
+        <h1 class="item-title">requirements</h1>
+        <p class="title-subtitle">add requirements for the event</p>
       </div>
-      <div class="extra-section-items">
+      <div class="extra-title-items">
         @for (item of eventForm.controls.requirements.controls; track $index) {
 
         <div class="item">
-          <div class="section-title">
-            <div class="section-title-label">
+          <div class="item-title">
+            <div class="item-title-label">
               <h1>Title fill items</h1>
               <p>item{{ $index + 1 }}</p>
 
@@ -145,21 +145,21 @@
         </div>
       </div>
 
-    </div>
+    </section>
 
 
 
-    <div class="extra-section">
-      <div class="extra-section-label">
-        <h1>Benefits</h1>
-        <p>add benefits for the event</p>
+    <section class="extra-title">
+      <div class="extra-title-label">
+        <h1 class="item-title">Benefits</h1>
+        <p class="title-subtitle">add benefits for the event</p>
       </div>
-      <div class="extra-section-items">
+      <div class="extra-title-items">
         @for (item of eventForm.controls.benefits.controls; track $index) {
 
         <div class="item">
-          <div class="section-title">
-            <div class="section-title-label">
+          <div class="item-title">
+            <div class="item-title-label">
               <h1>Title fill items</h1>
               <p>item{{ $index + 1 }}</p>
 
@@ -182,17 +182,17 @@
       </div>
 
 
-      <div class="extra-section">
+      <section class="extra-section">
         <div class="extra-section-label">
-          <h1>restrictions</h1>
-          <p>add restrictions for the event</p>
+          <h1 class="item-title">restrictions</h1>
+          <p class="section-subtitle">add restrictions for the event</p>
         </div>
         <div class="extra-section-items">
           @for (item of eventForm.controls.restrictions.controls; track $index) {
 
           <div class="item">
-            <div class="section-title">
-              <div class="section-title-label">
+            <div class="item-title">
+              <div class="item-title-label">
                 <h1>Title fill items</h1>
                 <p>item{{ $index + 1 }}</p>
 
@@ -214,18 +214,18 @@
           </div>
         </div>
 
-      </div>
+      </section>
 
 
-    </div>
+    </section>
 
 
 
 
-<div class="form-buttons-container">
+<section class="form-buttons-container">
   <button type="button" class="cancel-button">Cancel</button>
     <button type="submit" class="submit-button" >Submit</button>
 <img  alt="">
-</div>
+</section>
   </form>
-</div>
+</article>

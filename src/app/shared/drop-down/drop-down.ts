@@ -11,5 +11,4 @@ import { DropDownConfig } from './interfaces/drop-down.interface';
 export class DropDown {
   @Input()config!: DropDownConfig;
 
-
 }

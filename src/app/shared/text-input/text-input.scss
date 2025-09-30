@@ -1,4 +1,5 @@
-@import '../../../../public/cssVars.scss';
+@import '../../../../public/colors.scss';
+@import '../../../../public/font-sizes.scss';
 
 .event-name-input {
     width: 100%;
@@ -11,6 +12,8 @@
     background-color: $input-bg-color;
     color: $input-text-color;
     outline: none;
+        box-sizing: border-box;
+
     
     &::placeholder {
         color: $input-text-color;

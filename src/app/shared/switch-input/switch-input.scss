@@ -1,5 +1,5 @@
-@import '../../../../public/cssVars.scss';
-
+@import '../../../../public/colors.scss';
+@import '../../../../public/font-sizes.scss';
 .toggle-container {
   width: 75%;
   display: flex;
@@ -7,13 +7,13 @@
   justify-content: flex-end;
   gap: 10px;
   padding-left: 0px;
-  padding-right: 56px;
+  padding-inline-end: 56px; 
   margin-left: auto;
 
   .toggle-switch {
     position: relative;
     display: inline-block;
-    width: 50px;
+    width: 50px; 
     height: 24px;
 
     .toggle-input {

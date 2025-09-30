@@ -2,6 +2,7 @@
 
    <option value="" disabled selected>{{config.placeholder}}</option>
    @for ( option of config.options; track $index) {
-   <option [value]="option">{{ option }}</option>
+   <option [value]="$index">{{ option }}</option>
    }
 </select>
+

@@ -1,5 +1,5 @@
 import { Component, Inject, inject } from '@angular/core';
-import { FormBuilder, FormArray, FormGroup, ReactiveFormsModule, Validators ,FormControl} from '@angular/forms';
+import { FormBuilder, FormArray, FormGroup, ReactiveFormsModule, Validators, FormControl } from '@angular/forms';
 import { TextInput } from '../../shared/text-input/text-input';
 import { TextAreaInput } from '../../shared/text-area-input/text-area-input';
 import { DateInput } from '../../shared/date-input/date-input';
@@ -21,16 +21,17 @@ import { SwitchInput } from "../../shared/switch-input/switch-input";
     LabeledTextInput,
     DropDown,
     SwitchInput,
-],
+  ],
   templateUrl: './events.html',
   styleUrl: './events.scss',
 })
 export class Events {
+  private fb = inject(FormBuilder);
+
   constructor() { }
 
-  private fb = inject(FormBuilder);
-  eventSections: any[] = [];
-  eventMediaContent: string[] = [];
+
+  eventMediaContent: object[] = [];
   eventForm = this.fb.group({
     eventNameEn: [''],
     eventNameAr: [''],
@@ -50,26 +51,29 @@ export class Events {
   get eventNameEn() {
     return this.eventForm.controls.eventNameEn;
   }
+
   addItem(formArrayName: string): void {
     const formArray = this.eventForm.get(formArrayName) as FormArray;
     formArray.push(this.fb.group({
-      itemNameEn:  ['', Validators.required],
+      itemNameEn: ['', Validators.required],
       itemNameAr: ['', Validators.required],
     }));
   }
-  delete(formArrayItem:string, index:number):void {
+
+  delete(formArrayItem: string, index: number): void {
     const formArray = this.eventForm.get(formArrayItem) as FormArray;
     formArray.removeAt(index);
   }
 
   onSubmit(): void {
-    if(this.eventForm.valid){
+    if (this.eventForm.valid) {
       const filteredData = Object.fromEntries(
-        Object.entries(this.eventForm.value).filter(([key, value]) => 
-          value !== '' && value !== null && value !== undefined && 
+        Object.entries(this.eventForm.value).filter(([key, value]) =>
+          value !== '' && value !== null && value !== undefined &&
           !(Array.isArray(value) && value.length === 0)
         )
       );
+      
 
       console.log('th data of the Form :', filteredData);
       console.log('Event Media Content:', this.eventMediaContent);
@@ -80,16 +84,8 @@ export class Events {
   }
 
   // i should implement its value to form Group 
-  onImagesSelected(images: string[]): void {
+  onImagesSelected(images: object[]): void {
     this.eventMediaContent = images;
   }
-
-
-
-
-
-
-
-
 
 }

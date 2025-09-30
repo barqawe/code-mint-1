@@ -1,4 +1,6 @@
-@import '../../../../public/cssVars.scss';
+@import '../../../../public/colors.scss';
+@import '../../../../public/font-sizes.scss';
+
 
 .date-input {
     background-color: $input-bg-color;
@@ -9,11 +11,12 @@
     width: 100%;
     height: $input-height;
     font-size: $font-size-small;
-    padding: 0 40px 0 12px;
+    padding: 0 20px 0 12px;
     text-align: left;
     position: relative;
     cursor: pointer;
     outline: none;
+    box-sizing: border-box;
 
     &::after {
         content: '';

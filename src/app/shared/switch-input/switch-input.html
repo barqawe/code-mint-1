@@ -1,7 +1,7 @@
   <div class="toggle-container">
         <label class="toggle-switch">
-          <input type="checkbox" class="toggle-input" [formControl]="config.control" />
+          <input (click)="toggleSwitch()" type="checkbox" class="toggle-input" [formControl]="config.control" />
           <span class="slider"></span>
         </label>
-        <span class="toggle-label" [ngClass]="{'active': config.control.value, 'inactive': !config.control.value}">{{config.control.value ? 'Active' : 'Inactive'}}</span>
+        <span class="toggle-label" [ngClass]="{'active': config.control.value , 'inactive': !config.control.value}">{{inputText}}</span>
       </div>
