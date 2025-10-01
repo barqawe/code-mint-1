@@ -1,9 +1,10 @@
 import { Component, Output,EventEmitter } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-side-menu',
-  imports: [NgClass],
+  imports: [NgClass, RouterLink, RouterLinkActive],
   templateUrl: './side-menu.html',
   styleUrl: './side-menu.scss'
 })

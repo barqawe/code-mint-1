@@ -1,0 +1,100 @@
+@import '../../../../public/colors.scss';
+@import '../../../../public/font-sizes.scss';
+
+
+.nqfd-page {
+    height: 100vh;
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    background-color: #F4F7FB;
+    align-items: center;
+    font-size: $font-size-small;
+    
+
+    .nqfd-container {
+        background-color: #FFFFFF;
+        min-height: 200px;
+        width: 90%;
+        border: solid 1px #E0E0E0;
+        border-radius: 2em;
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+
+        .nqfd-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2em 1em;
+
+            &-text {
+                font-size: 1em;
+                font-style: inherit;
+            }
+
+            &-buttons {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1em;
+
+                .nqfd-reports-button {
+                    background-color: transparent;
+                    color: $blue-theme-color;
+                    border: solid 1px $blue-theme-color;
+                    border-radius: 0.3em;
+                    width: 6em;
+                    height: 2.5em;
+                    cursor: pointer;
+
+
+
+
+                }
+
+                .nqfd-search-input {
+                    border: solid 1px #E0E0E0;
+                    border-radius: 0.3em;
+                    height: 2.5em;
+                    padding: 0 0.5em;
+                    color: $input-text-color;
+                }
+
+
+            }
+
+        }
+
+        .nqfd-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8em;
+
+            .nqfd-content-description {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                height: 2em;
+                background-color: #E1EBF9;
+                margin: 0px 1em;
+                border-top-right-radius: 1em;
+                border-top-left-radius: 1em;
+
+            }
+        }
+        .nqfd-navigators{
+            display: flex;
+            justify-content: space-between;
+            padding-inline: 1em;
+            padding-block: 1em;
+            .nqfd-navigators-resaults-count{
+                background-color: transparent;
+            }
+        }
+    }
+
+}

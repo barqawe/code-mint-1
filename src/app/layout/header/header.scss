@@ -1,23 +1,39 @@
+@import '../../../../public/font-sizes.scss';
+
 .header {
     display: flex;
     justify-content: space-between;
-    .header-logo{
+    background-color: #ffffff;
+    width: 100%;
+    margin: 0%;
+    padding-block:0.3em ;
+    height: 5em;
+    font-size: $font-size-medium;
+
+
+    .header-logo {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 1em;
-            .logo-text{
+
+        .logo-text {
             font-size: 1.2em;
             font-weight: bold;
-            }
+        }
     }
-    .header-user-profile{
-        margin-right: 2em;
-        margin-top: 1em;
+
+    .header-user-profile {
         border: 1px solid #918e8e;
         border-radius: 1em;
-        width: 15em;
-        height: 6em;
+        height: 4em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1em;
+        margin-right: 2em;
+        padding-inline: 1em;
+
     }
 
 }
