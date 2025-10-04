@@ -5,32 +5,70 @@
                 National Qualifications Framework Descriptors
             </span>
             <div class="nqfd-header-buttons">
-                <button class="nqfd-reports-button"><img src="../../../../public/side-menu-icons/filter-svgrepo-com.png"
-                        alt="">reports</button>
+                <button class="nqfd-reports-button"><img src="/side-menu-icons/filter-svgrepo-com.png"
+                        alt="" width="20px" height="20x">reports</button>
                 <input type="text" placeholder="Search" class="nqfd-search-input">
-                <span>
-                    filter
-                </span>
+                
             </div>
         </header>
         <div class="nqfd-content">
             <div class="nqfd-content-description">
-                <span>
+                <span class="nqfd-cell">
                     #
                 </span>
-                <span>Descriptor (English)</span>
-                <span>Descriptor (Arabic)</span>
-                <span>Characer Identifier</span>
-                <span>Number Identifier</span>
-                <span>Options</span>
+                <span class="nqfd-cell">Descriptor (English)</span>
+                <span class="nqfd-cell">Descriptor (Arabic)</span>
+                <span class="nqfd-cell">Characer Identifier</span>
+                <span class="nqfd-cell">Number Identifier</span>
+                <span class="nqfd-cell">options</span>
 
 
             </div>
 
+            @for (item of data; track $index) {
+            <div class="nqfd-content-items" [ngClass]="{'isOdd':item.id%2!=0}">
+                <span class="nqfd-cell">
+                   {{ item.id}}
+                </span>
+                <span class="nqfd-cell">{{item.descriptorEn}}</span>
+                <span class="nqfd-cell">{{item.descriptorAr}}</span>
+                <span class="nqfd-cell">{{item.ci}}</span>
+                <span class="nqfd-cell">{{item.ni}}</span>
+                <span class="nqfd-cell">
+                    <img src="/other-icons-png/icons8-pencil-drawing-50.png"
+                        alt="" width="20px" height="20x">
+                        <img src="/other-icons-png/icons8-trash-50.png"
+                        alt="" width="20px" height="20x" (click)="deleteNqdf(item)">
+                        <img src="/other-icons-png/icons8-window-search-50.png"
+                        alt="" width="20px" height="20x">
+                </span>
+
+            </div>
+            }
+
         </div>
-        <div class="nqfd-navigators">
-            <div class="nqfd-navigators-resaults-count">
-                showing 0 out of 0 
+        <div class="nqfd-pagination">
+            <div class="nqfd-pagination-resaults-count">
+                showing {{data.length}} out of 15
+            </div>
+            <div class="nqfd-pagination-buttons">
+                <button class="pagination-buttons" (click)="previousePages()">
+                            <<
+                </button>
+                   <button class="pagination-buttons" (click)="previousePage()">
+                            <
+                </button>
+                <div class="pagination-buttons count">
+                    {{currentPage}}
+
+                </div>
+                 <button class="pagination-buttons" (click)="nextPage()">
+                            >
+                </button>
+                 <button class="pagination-buttons" (click)="nextPages()">
+                            >>
+                </button>
+                
             </div>
 
         </div>

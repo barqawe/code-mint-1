@@ -22,7 +22,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-block-start: 1em;
+      padding-block-start: 0em;
     }
 
 
@@ -53,6 +53,10 @@
   .side-menu-buttons {
     list-style: none;
     padding-inline-start: 0.3em;
+display: flex;
+flex-direction: column;
+gap: 0.3em;
+    
 
     .side-menu-button {
       width: 100%;
@@ -69,7 +73,6 @@
       display: flex;
       justify-content: start;
       align-items: center;
-      gap: 0.5em;
 
       &:hover {
         background-color: $blue-theme-color;

@@ -14,9 +14,7 @@ import { NgClass } from '@angular/common';
 export class Base {
   isOpen : boolean = false;
   isSideMenuOpen(event: boolean) {
-    this.isOpen = event;
-    console.log(this.isOpen);
-    
+    this.isOpen = event;    
   }
 
 }

@@ -11,6 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class SideMenu {
   @Output() toggle = new EventEmitter<boolean>();
   isOpen:boolean = false;
+  
   toggleMenu() {
     this.isOpen = !this.isOpen;
     this.toggle.emit(this.isOpen);

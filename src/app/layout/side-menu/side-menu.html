@@ -13,12 +13,31 @@
     </header>
     <nav class="side-menu-top-buttons">
         <ul class="side-menu-buttons">
-            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-graduate-attributes.svg" alt="" ><span class="button-text">Grad Attributes</span></button></li>
-            <li><button routerLink="/nqfd" routerLinkActive="active" class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-national-qualifications-framework-descriptors.svg" alt=""><span class="button-text">NQF Descriptors</span></button></li>
-            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-evaluation-criterion.svg" alt=""><span class="button-text">Evaluation criterion</span></button></li>
-            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-program.svg" alt=""><span class="button-text">Programs</span></button></li>
-            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-course.svg" alt=""><span class="button-text">Courses</span></button></li>
-            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-graduate-attributes.svg" alt=""><span class="button-text">C.Sections</span></button></li>
+            <li><button routerLink="/" routerLinkActive="active" #EventLink="routerLinkActive" class="side-menu-button">
+                    <img class="button-logo" src="/side-menu-icons/active-evaluation-criterion.svg" alt="">
+                    <span class="button-text">Event Form</span>
+                </button></li>
+
+            <li><button class="side-menu-button"><img class="button-logo"
+                        src="/side-menu-icons/non-active-graduate-attributes.svg" alt=""><span class="button-text">Grad
+                        Attributes</span></button></li>
+            <li><button routerLink="/nqfd" routerLinkActive="active" #nqfdLink="routerLinkActive"
+                    class="side-menu-button">
+                    <img class="button-logo"
+                        [src]="nqfdLink.isActive ? '/side-menu-icons/active-national-qualifications-framework-descriptors.svg' : '/side-menu-icons/non-active-national-qualifications-framework-descriptors.svg'"
+                        alt="">
+                    <span class="button-text">NQF Descriptors</span>
+                </button></li>
+            <li><button class="side-menu-button"><img class="button-logo"
+                        src="/side-menu-icons/non-active-evaluation-criterion.svg" alt=""><span
+                        class="button-text">Evaluation criterion</span></button></li>
+            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-program.svg"
+                        alt=""><span class="button-text">Programs</span></button></li>
+            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-course.svg"
+                        alt=""><span class="button-text">Courses</span></button></li>
+            <li><button class="side-menu-button"><img class="button-logo"
+                        src="/side-menu-icons/non-active-graduate-attributes.svg" alt=""><span
+                        class="button-text">C.Sections</span></button></li>
 
         </ul>
     </nav>
@@ -26,13 +45,16 @@
 
 
     <nav class="side-menu-bottom-buttons">
-            <hr class="divider">
+        <hr class="divider">
 
-        
+
         <ul class="side-menu-buttons">
-            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/mintyhub.svg" alt=""><span class="button-text">MintyHub</span></button></li>
-            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/ar-translate.svg" alt=""><span class="button-text">عربي</span></button></li>
-            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/logout.svg" alt=""><span class="button-text">Logout</span></button></li>
+            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/mintyhub.svg"
+                        alt=""><span class="button-text">MintyHub</span></button></li>
+            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/ar-translate.svg"
+                        alt=""><span class="button-text">عربي</span></button></li>
+            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/logout.svg" alt=""><span
+                        class="button-text">Logout</span></button></li>
 
         </ul>
     </nav>
