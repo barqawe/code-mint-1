@@ -6,13 +6,9 @@
   width: 200px;
   height: 100%;
   background-color: #ffffff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-inline: 0px;
   display: flex;
   flex-direction: column;
-  font-size:$font-size-small ;
+  font-size: $font-size-small ;
 
 
   .side-menu-header {
@@ -53,10 +49,10 @@
   .side-menu-buttons {
     list-style: none;
     padding-inline-start: 0.3em;
-display: flex;
-flex-direction: column;
-gap: 0.3em;
-    
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+
 
     .side-menu-button {
       width: 100%;
