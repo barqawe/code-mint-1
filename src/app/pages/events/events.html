@@ -1,197 +1,127 @@
-
 <section class="event">
 
-<h2 class="event-title">Events</h2>
-<article class="event-form">
-  <header class="event-form-header">
-    <h2>Add New Event</h2>
-    <hr />
-  </header>
-  <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
-    <section class="event-field">
-      <div class="event-field-title">
-        <h2>Event Name</h2>
-        <p class="event-field-subtitle">add Event title that customers would likely to search</p>
-      </div>
+  <h2 class="event-title">Events</h2>
+  <article class="event-form">
+    <header class="event-form-header">
+      <h2>Add New Event</h2>
+      <hr />
+    </header>
+    <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+      <section class="event-field">
+        <header class="event-field-title">
+          <h3>Event Name</h3>
+          <p class="event-field-subtitle">add Event title that customers would likely to search</p>
+        </header>
 
-      <div class="event-field-input-container">
-        <app-text-input
-          [config]="{ placeholder: 'Event name(english)', control: eventForm.controls.eventNameEn }"></app-text-input>
+        <div class="event-field-input-container">
+          <app-text-input
+            [config]="{ placeholder: 'Event name(english)', control: eventForm.controls.eventNameEn }"></app-text-input>
 
-        <app-text-input
-          [config]="{ placeholder: 'Event name(Arabic)', control: eventForm.controls.eventNameAr }"></app-text-input>
-      </div>
-    </section>
-    <section class="event-field">
-      <div class="event-field-title">
-        <h2>Event Description</h2>
-        <p class="event-field-subtitle">
-          add Event Description that customers would likely to search
-        </p>
-      </div>
-      <div class="event-field-input-container">
-        <app-text-area-input [config]="{
+          <app-text-input
+            [config]="{ placeholder: 'Event name(Arabic)', control: eventForm.controls.eventNameAr }"></app-text-input>
+        </div>
+      </section>
+      <section class="event-field">
+        <header class="event-field-title">
+          <h3>Event Description</h3>
+          <p class="event-field-subtitle">
+            add Event Description that customers would likely to search
+          </p>
+        </header>
+        <div class="event-field-input-container">
+          <app-text-area-input [config]="{
             placeholder: 'Event Description(Arabic)',
             control: eventForm.controls.eventDescriptionAr
           }"></app-text-area-input>
-        <app-text-area-input [config]="{
+          <app-text-area-input [config]="{
             placeholder: 'Event Description(english)',
             control: eventForm.controls.eventDescriptionEn
           }"></app-text-area-input>
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <section class="event-field-input-container switch-container">
-      <app-switch-input [config]="{ control: eventForm.controls.active }"></app-switch-input>
-    </section>
+      <section class="event-field-input-container switch-container">
+        <app-switch-input [config]="{ control: eventForm.controls.active }"></app-switch-input>
+      </section>
 
-    <section class="event-field">
-      <div class="event-field-title">
-        <h2>Event Date</h2>
-        <p class="event-field-subtitle">Select the date of the event</p>
-      </div>
-      <div class="event-field-input-container single-input">
-        <app-date-input [config]="{ control: eventForm.controls.eventDate }"></app-date-input>
-      </div>
-    </section>
+      <section class="event-field">
+        <header class="event-field-title">
+          <h3>Event Date</h3>
+          <p class="event-field-subtitle">Select the date of the event</p>
+        </header>
+        <div class="event-field-input-container single-input">
+          <app-date-input [config]="{ control: eventForm.controls.eventDate }"></app-date-input>
+        </div>
+      </section>
 
-    <section class="event-field">
-      <div class="event-field-title">
-        <h2>Event Time</h2>
-        <p class="event-field-subtitle">Select the time of the event</p>
-      </div>
-      <div class="event-field-input-container single-input">
-        <app-time-input [config]="{ control: eventForm.controls.eventTime }"></app-time-input>
-      </div>
-    </section>
+      <section class="event-field">
+        <header class="event-field-title">
+          <h3>Event Time</h3>
+          <p class="event-field-subtitle">Select the time of the event</p>
+        </header>
+        <div class="event-field-input-container single-input">
+          <app-time-input [config]="{ control: eventForm.controls.eventTime }"></app-time-input>
+        </div>
+      </section>
 
-    <section class="event-field">
-      <div class="event-field-title">
-        <h2>Media Content</h2>
-        <p class="event-field-subtitle">Add media content just images</p>
-      </div>
-      <div class="event-field-input-container">
-        <app-images-upload (imagesSelected)="onImagesSelected($event)"></app-images-upload>
-      </div>
-    </section>
+      <section class="event-field">
+        <header class="event-field-title">
+          <h3>Media Content</h3>
+          <p class="event-field-subtitle">Add media content just images</p>
+        </header>
+        <div class="event-field-input-container">
+          <app-images-upload (imagesSelected)="onImagesSelected($event)"></app-images-upload>
+        </div>
+      </section>
 
-    <section class="event-field">
-      <div class="event-field-title">
-        <h2>Price</h2>
-        <p class="event-field-subtitle">Add the price of the event</p>
-      </div>
-      <div class="event-field-input-container">
-        <app-labeled-text-input [config]="{
+      <section class="event-field">
+        <header class="event-field-title">
+          <h3>Price</h3>
+          <p class="event-field-subtitle">Add the price of the event</p>
+        </header>
+        <div class="event-field-input-container">
+          <app-labeled-text-input [config]="{
             label: 'JOD',
             placeholder: 'Event Price',
             control: eventForm.controls.eventprice
           }"></app-labeled-text-input>
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <section class="event-field">
-      <div class="event-field-title">
-        <h2>SubCategory</h2>
-        <p class="event-field-subtitle">Add the subcategory of the event</p>
-      </div>
-      <div class="event-field-input-container">
-        <app-drop-down [config]="{
+      <section class="event-field">
+        <header class="event-field-title">
+          <h3>SubCategory</h3>
+          <p class="event-field-subtitle">Add the subcategory of the event</p>
+        </header>
+        <div class="event-field-input-container">
+          <app-drop-down [config]="{
             options: ['Location 1', 'Location 2', 'Location 3'],
             control: eventForm.controls.eventSubCategory,
             placeholder: 'SubCategory'
           }"></app-drop-down>
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <section class="event-field">
-      <div class="event-field-title">
-        <h2>Available Quantity</h2>
-        <p class="event-field-subtitle">Add the available quantity of the event</p>
-      </div>
-      <div class="event-field-input-container">
-        <app-drop-down [config]="{
+      <section class="event-field">
+        <header class="event-field-title">
+          <h3>Available Quantity</h3>
+          <p class="event-field-subtitle">Add the available quantity of the event</p>
+        </header>
+        <div class="event-field-input-container">
+          <app-drop-down [config]="{
             options: ['1', '2', '3'],
             control: eventForm.controls.eventAvailableQuantity,
             placeholder: 'Available Quantity'
           }"></app-drop-down>
-      </div>
-    </section>
-    <section class="extra-title">
-      <div class="extra-title-label">
-        <h1 class="item-title">requirements</h1>
-        <p class="title-subtitle">add requirements for the event</p>
-      </div>
-      <div class="extra-title-items">
-        @for (item of eventForm.controls.requirements.controls; track $index) {
-
-        <div class="item">
-          <div class="item-title">
-            <div class="item-title-label">
-              <h1>Title fill items</h1>
-              <p>item{{ $index + 1 }}</p>
-
-            </div>
-
-
-          </div>
-          <div class="item-input-container">
-            <input type="text" placeholder="Item Name in Arabic" class="item-input" [formControl]="$any(eventForm.controls.requirements.controls[$index]).controls.itemNameAr">
-            <input type="text" placeholder="Item Name in English" class="item-input" [formControl]="$any(eventForm.controls.requirements.controls[$index]).controls.itemNameEn">
-          </div>
-          <div class="delete-item-button" (click)="delete('requirements', $index)">X</div>
         </div>
-
-
-        }
-        <div class="add-item-button-container">
-          <button type="button" class="add-item-button" (click)="addItem('requirements')">+Add another Item </button>
-        </div>
-      </div>
-
-    </section>
-
-
-
-    <section class="extra-title">
-      <div class="extra-title-label">
-        <h1 class="item-title">Benefits</h1>
-        <p class="title-subtitle">add benefits for the event</p>
-      </div>
-      <div class="extra-title-items">
-        @for (item of eventForm.controls.benefits.controls; track $index) {
-
-        <div class="item">
-          <div class="item-title">
-            <div class="item-title-label">
-              <h1>Title fill items</h1>
-              <p>item{{ $index + 1 }}</p>
-
-            </div>
-
-
-          </div>
-          <div class="item-input-container">
-            <input type="text" placeholder="Item Name in Arabic" class="item-input" [formControl]="$any(eventForm.controls.benefits.controls[$index]).controls.itemNameAr">
-            <input type="text" placeholder="Item Name in English" class="item-input" [formControl]="$any(eventForm.controls.benefits.controls[$index]).controls.itemNameEn">
-          </div>
-          <div class="delete-item-button" (click)="delete('benefits', $index)">X</div>
-        </div>
-
-
-        }
-        <div class="add-item-button-container">
-          <button type="button" class="add-item-button" (click)="addItem('benefits')">+Add another Item </button>
-        </div>
-      </div>
-
-
-      <section class="extra-section">
-        <div class="extra-section-label">
-          <h1 class="item-title">restrictions</h1>
-          <p class="section-subtitle">add restrictions for the event</p>
-        </div>
-        <div class="extra-section-items">
-          @for (item of eventForm.controls.restrictions.controls; track $index) {
+      </section>
+      <section class="extra-title">
+        <header class="extra-title-label">
+          <h3 class="item-title">requirements</h3>
+          <p class="title-subtitle">add requirements for the event</p>
+        </header>
+        <div class="extra-title-items">
+          @for (item of eventForm.controls.requirements.controls; track $index) {
 
           <div class="item">
             <div class="item-title">
@@ -204,32 +134,108 @@
 
             </div>
             <div class="item-input-container">
-              <input type="text" placeholder="Item Name in Arabic" class="item-input" [formControl]="$any(eventForm.controls.restrictions.controls[$index]).controls.itemNameAr">
-              <input type="text" placeholder="Item Name in English" class="item-input" [formControl]="$any(eventForm.controls.restrictions.controls[$index]).controls.itemNameEn">
+              <input type="text" placeholder="Item Name in Arabic" class="item-input"
+                [formControl]="$any(eventForm.controls.requirements.controls[$index]).controls.itemNameAr">
+              <input type="text" placeholder="Item Name in English" class="item-input"
+                [formControl]="$any(eventForm.controls.requirements.controls[$index]).controls.itemNameEn">
             </div>
-            <div class="delete-item-button" (click)="delete('restrictions', $index)">X</div>
+            <div class="delete-item-button" (click)="delete('requirements', $index)">X</div>
           </div>
 
 
           }
           <div class="add-item-button-container">
-            <button type="button" class="add-item-button" (click)="addItem('restrictions')">+Add another Item </button>
+            <button type="button" class="add-item-button" (click)="addItem('requirements')">+Add another Item </button>
           </div>
         </div>
 
       </section>
 
 
-    </section>
+
+      <section class="extra-title">
+        <header class="extra-title-label">
+          <h3 class="item-title">Benefits</h3>
+          <p class="title-subtitle">add benefits for the event</p>
+        </header>
+        <div class="extra-title-items">
+          @for (item of eventForm.controls.benefits.controls; track $index) {
+
+          <div class="item">
+            <div class="item-title">
+              <div class="item-title-label">
+                <h1>Title fill items</h1>
+                <p>item{{ $index + 1 }}</p>
+
+              </div>
+
+
+            </div>
+            <div class="item-input-container">
+              <input type="text" placeholder="Item Name in Arabic" class="item-input"
+                [formControl]="$any(eventForm.controls.benefits.controls[$index]).controls.itemNameAr">
+              <input type="text" placeholder="Item Name in English" class="item-input"
+                [formControl]="$any(eventForm.controls.benefits.controls[$index]).controls.itemNameEn">
+            </div>
+            <div class="delete-item-button" (click)="delete('benefits', $index)">X</div>
+          </div>
+
+
+          }
+          <div class="add-item-button-container">
+            <button type="button" class="add-item-button" (click)="addItem('benefits')">+Add another Item </button>
+          </div>
+        </div>
+
+
+        <section class="extra-section">
+          <header class="extra-section-label">
+            <h3 class="item-title">restrictions</h3>
+            <p class="section-subtitle">add restrictions for the event</p>
+          </header>
+          <div class="extra-section-items">
+            @for (item of eventForm.controls.restrictions.controls; track $index) {
+
+            <div class="item">
+              <header class="item-title">
+                <div class="item-title-label">
+                  <h4>Title fill items</h4>
+                  <p>item{{ $index + 1 }}</p>
+
+                </div>
+
+
+              </header>
+              <div class="item-input-container">
+                <input type="text" placeholder="Item Name in Arabic" class="item-input"
+                  [formControl]="$any(eventForm.controls.restrictions.controls[$index]).controls.itemNameAr">
+                <input type="text" placeholder="Item Name in English" class="item-input"
+                  [formControl]="$any(eventForm.controls.restrictions.controls[$index]).controls.itemNameEn">
+              </div>
+              <div class="delete-item-button" (click)="delete('restrictions', $index)">X</div>
+            </div>
+
+
+            }
+            <div class="add-item-button-container">
+              <button type="button" class="add-item-button" (click)="addItem('restrictions')">+Add another Item
+              </button>
+            </div>
+          </div>
+
+        </section>
+
+
+      </section>
 
 
 
 
-<section class="form-buttons-container">
-  <button type="button" class="cancel-button">Cancel</button>
-    <button type="submit" class="submit-button" >Submit</button>
-<img  alt="">
-</section>
-  </form>
-</article>
+      <footer class="form-buttons-container">
+        <button type="button" class="cancel-button">Cancel</button>
+        <button type="submit" class="submit-button">Submit</button>
+        <img alt="">
+      </footer>
+    </form>
+  </article>
 </section>
