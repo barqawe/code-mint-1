@@ -6,50 +6,51 @@
             </span>
             <div class="nqfd-header-buttons">
                 <button class="nqfd-reports-button"><img src="/side-menu-icons/filter-svgrepo-com.png"
-                        alt="" width="20px" height="20x">reports</button>
+                        alt="" class="filter-icon">reports</button>
                 <input type="text" placeholder="Search" class="nqfd-search-input">
                 
             </div>
         </header>
-        <div class="nqfd-content">
-            <div class="nqfd-content-description">
-                <span class="nqfd-cell">
+        <table class="nqfd-content">
+           
+            <tr class="nqfd-content-description">
+                <th class="nqfd-cell">
                     #
-                </span>
-                <span class="nqfd-cell">Descriptor (English)</span>
-                <span class="nqfd-cell">Descriptor (Arabic)</span>
-                <span class="nqfd-cell">Characer Identifier</span>
-                <span class="nqfd-cell">Number Identifier</span>
-                <span class="nqfd-cell">options</span>
+                </th>
+                <th class="nqfd-cell">Descriptor (English)</th>
+                <th class="nqfd-cell">Descriptor (Arabic)</th>
+                <th class="nqfd-cell">Characer Identifier</th>
+                <th class="nqfd-cell">Number Identifier</th>
+                <th class="nqfd-cell">options</th>
 
 
-            </div>
+            </tr>
 
-            @for (item of data; track $index) {
-            <div class="nqfd-content-items" [ngClass]="{'isOdd':item.id%2!=0}">
-                <span class="nqfd-cell">
-                   {{ item.id}}
-                </span>
-                <span class="nqfd-cell">{{item.descriptorEn}}</span>
-                <span class="nqfd-cell">{{item.descriptorAr}}</span>
-                <span class="nqfd-cell">{{item.ci}}</span>
-                <span class="nqfd-cell">{{item.ni}}</span>
-                <span class="nqfd-cell">
+            @for (nqfd of nqfds; track $index) {
+            <tr class="nqfd-content-items" [ngClass]="{'isOdd':nqfd.id%2!=0}">
+                <td class="nqfd-cell">
+                   {{ nqfd.id}}
+                </td>
+                <td class="nqfd-cell">{{nqfd.descriptorEn}}</td>
+                <td class="nqfd-cell">{{nqfd.descriptorAr}}</td>
+                <td class="nqfd-cell">{{nqfd.ci}}</td>
+                <td class="nqfd-cell">{{nqfd.ni}}</td>
+                <td class="nqfd-cell">
                     <img src="/other-icons-png/icons8-pencil-drawing-50.png"
-                        alt="" width="20px" height="20x">
+                        alt="" class="action-icon edit-icon">
                         <img src="/other-icons-png/icons8-trash-50.png"
-                        alt="" width="20px" height="20x" (click)="deleteNqdf(item)">
+                        alt="" class="action-icon delete-icon" (click)="deleteNqdf(nqfd)">
                         <img src="/other-icons-png/icons8-window-search-50.png"
-                        alt="" width="20px" height="20x">
-                </span>
+                        alt="" class="action-icon view-icon">
+                </td>
 
-            </div>
+            </tr>
             }
 
-        </div>
+        </table>
         <div class="nqfd-pagination">
             <div class="nqfd-pagination-resaults-count">
-                showing {{data.length}} out of 15
+                showing {{nqfds.length * currentPage}} out of {{nqfdsCount}}
             </div>
             <div class="nqfd-pagination-buttons">
                 <button class="pagination-buttons" (click)="previousePages()">

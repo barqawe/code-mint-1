@@ -41,3 +41,17 @@
         width: 100%;
     }
 }
+
+@media (max-width: 768px) {
+    :host {
+        grid-template-columns: 1fr;
+    }
+
+    .side-menu {
+        display: none;
+    }
+
+    .main-content {
+        grid-column: 1;
+    }
+}

@@ -1,7 +1,7 @@
 <aside class="side-menu " [ngClass]="{'closed': !isOpen}">
     <header class="side-menu-header">
         <div class="side-menu-logo">
-            <img src="/side-menu-icons/full-eduminty-logo.svg" alt="App Logo" class="logo-image" width="100px" />
+            <img src="/side-menu-icons/full-eduminty-logo.svg" alt="App Logo" class="logo-image" />
         </div>
         <div class="side-menu-toggle">
             <button type="button" class="toggle-button" (click)="toggleMenu()">
@@ -12,7 +12,10 @@
 
     </header>
     <nav class="side-menu-top-buttons">
+
         <ul class="side-menu-buttons">
+
+            
             <li><button routerLink="/" routerLinkActive="active" #EventLink="routerLinkActive" class="side-menu-button" [routerLinkActiveOptions]="{exact:true}">
                     <img class="button-logo" [src]="EventLink.isActive?'/side-menu-icons/active-academic-year.svg' : '/side-menu-icons/non-active-academic-year.svg'" alt="">
                     <span class="button-text">Event Form</span>
@@ -21,6 +24,8 @@
             <li><button class="side-menu-button"><img class="button-logo"
                         src="/side-menu-icons/non-active-graduate-attributes.svg" alt=""><span class="button-text">Grad
                         Attributes</span></button></li>
+
+
             <li><button routerLink="/nqfd" routerLinkActive="active" #nqfdLink="routerLinkActive" 
                     class="side-menu-button" >
                     <img class="button-logo"
@@ -28,13 +33,21 @@
                         alt="">
                     <span class="button-text">NQF Descriptors</span>
                 </button></li>
+
+
             <li><button class="side-menu-button"><img class="button-logo"
                         src="/side-menu-icons/non-active-evaluation-criterion.svg" alt=""><span
                         class="button-text">Evaluation criterion</span></button></li>
+
+
             <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-program.svg"
                         alt=""><span class="button-text">Programs</span></button></li>
+
+
             <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-course.svg"
                         alt=""><span class="button-text">Courses</span></button></li>
+
+
             <li><button class="side-menu-button"><img class="button-logo"
                         src="/side-menu-icons/non-active-graduate-attributes.svg" alt=""><span
                         class="button-text">C.Sections</span></button></li>

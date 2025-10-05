@@ -17,6 +17,11 @@
         justify-content: center;
         gap: 1em;
 
+        .logo-image {
+            width: 60px;
+            height: auto;
+        }
+
         .logo-text {
             font-size: 1.2em;
             font-weight: bold;
@@ -35,6 +40,10 @@
         padding-inline: 1em;
         cursor: pointer;
 
+        .user-profile-image {
+            width: 40px;
+            height: auto;
+        }
     }
 
 }

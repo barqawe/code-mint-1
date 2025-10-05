@@ -33,12 +33,12 @@ export class Events {
 
   eventMediaContent: object[] = [];
   eventForm = this.fb.group({
-    eventNameEn: [''],
-    eventNameAr: [''],
-    eventDescriptionEn: ['', Validators.required],
-    eventDescriptionAr: ['', Validators.required],
-    eventDate: [''],
-    eventTime: [''],
+    eventNameEn: ['',Validators.required , Validators.minLength(3)],
+    eventNameAr: ['',Validators.required , Validators.minLength(3)],
+    eventDescriptionEn: ['', Validators.required , Validators.minLength(3)],
+    eventDescriptionAr: ['', Validators.required , Validators.minLength(3)],
+    eventDate: ['', Validators.required],
+    eventTime: ['', Validators.required],
     active: [true],
     eventprice: ['', Validators.required],
     eventSubCategory: ['', Validators.required],
