@@ -11,11 +11,12 @@ import { Layout } from '../../layout';
 })
 export class SideMenu {
   constructor(public layout:Layout) {
-   
   }
+
   toggleMenu() {
     this.layout.toggleSideMenu();
   }
+  
   }
 
 

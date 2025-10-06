@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, DestroyRef, inject } from '@angular/core';
+import { Component, OnInit, DestroyRef, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NqfdI } from './interfaces/nqfd.interface';
 import { NgClass } from "@angular/common";
@@ -10,7 +10,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   templateUrl: './nqfd.html',
   styleUrl: './nqfd.scss'
 })
-export class Nqfd implements OnInit , OnDestroy {
+export class Nqfd implements OnInit  {
   nqfds: NqfdI[] = [];
   private destroyRef = inject(DestroyRef);
 
@@ -19,9 +19,7 @@ export class Nqfd implements OnInit , OnDestroy {
   ngOnInit() {
     this.fetchNqfds();
     this.getPagesCount();
-    
-    this.currentPage = 1
-  }
+      }
   currentPage: number = 1;
 
   pageSize: number = 15;
@@ -40,11 +38,9 @@ export class Nqfd implements OnInit , OnDestroy {
       error: (error) => {
         console.error('Error fetching data:', error);
       }
-      
-
     })
-
   }
+  
   getPagesCount(){
     let apiUrl='https://68de185cd7b591b4b78e5ef2.mockapi.io/nqfd'
     this.http.get(apiUrl).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
@@ -98,9 +94,7 @@ export class Nqfd implements OnInit , OnDestroy {
     this.fetchNqfds();
   }
 
-ngOnDestroy(){
 
-    }
 }
 
 

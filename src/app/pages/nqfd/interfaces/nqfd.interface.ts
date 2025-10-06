@@ -5,5 +5,4 @@ export interface NqfdI {
     ci: string;
     ni: string;
 
-
 }

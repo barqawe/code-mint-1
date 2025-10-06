@@ -12,7 +12,6 @@
 
 
   .side-menu-header {
-    padding: 0;
 
     .side-menu-logo {
       display: flex;
@@ -115,13 +114,6 @@
   .side-menu-logo {
     padding-left: 20px;
     padding-right: 20px;
-
-    logo-image {
-      width: 1px;
-      height: 1px;
-
-    }
-
   }
 
 
@@ -151,4 +143,40 @@
   .divider {
     margin: 0.8em 0.2em; // Adjust divider margins
   }
+}
+
+@media (max-width: 768px) {
+  .side-menu {
+    width: 110px;
+
+    .side-menu-header {
+      .side-menu-logo {
+        padding-block-start: 0em;
+
+        .logo-image {
+          width: 40px;
+          height: auto;
+        }
+      }
+    }
+
+    .side-menu-buttons {
+      padding-inline-start: 0.1em;
+      gap: 0.1em;}
+
+      .side-menu-button {
+        height: 2.5em;
+        padding-inline-end: 0em;
+        font-size: 12px;}
+
+        .button-logo {
+          width: 16px;
+          height: 16px;}
+  
+}
+.side-menu{
+  .closed {
+    width: 50px;
+  }
+ }
 }

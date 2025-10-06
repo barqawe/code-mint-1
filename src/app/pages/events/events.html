@@ -22,12 +22,14 @@
         </div>
       </section>
       <section class="event-field">
+
         <header class="event-field-title">
           <h3>Event Description</h3>
           <p class="event-field-subtitle">
             add Event Description that customers would likely to search
           </p>
         </header>
+
         <div class="event-field-input-container">
           <app-text-area-input [config]="{
             placeholder: 'Event Description(Arabic)',
@@ -38,10 +40,13 @@
             control: eventForm.controls.eventDescriptionEn
           }"></app-text-area-input>
         </div>
+
       </section>
 
       <section class="event-field-input-container switch-container">
+
         <app-switch-input [config]="{ control: eventForm.controls.active }"></app-switch-input>
+
       </section>
 
       <section class="event-field">
@@ -49,9 +54,11 @@
           <h3>Event Date</h3>
           <p class="event-field-subtitle">Select the date of the event</p>
         </header>
+
         <div class="event-field-input-container single-input">
           <app-date-input [config]="{ control: eventForm.controls.eventDate }"></app-date-input>
         </div>
+
       </section>
 
       <section class="event-field">
@@ -120,6 +127,7 @@
           <h3 class="item-title">requirements</h3>
           <p class="title-subtitle">add requirements for the event</p>
         </header>
+
         <div class="extra-title-items">
           @for (item of eventForm.controls.requirements.controls; track $index) {
 
@@ -130,7 +138,6 @@
                 <p>item{{ $index + 1 }}</p>
 
               </div>
-
 
             </div>
             <div class="item-input-container">
@@ -150,8 +157,6 @@
         </div>
 
       </section>
-
-
 
       <section class="extra-title">
         <header class="extra-title-label">
@@ -227,9 +232,6 @@
 
 
       </section>
-
-
-
 
       <footer class="form-buttons-container">
         <button type="button" class="cancel-button">Cancel</button>

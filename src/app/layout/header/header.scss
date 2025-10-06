@@ -5,9 +5,8 @@
     justify-content: space-between;
     background-color: #ffffff;
     width: 100%;
-    margin: 0%;
     padding-block: 0.3em;
-    height: 4em;
+    height: 4em;//
     font-size: $font-size-medium;
 
 
@@ -16,10 +15,10 @@
         align-items: center;
         justify-content: center;
         gap: 1em;
+        padding-left: 1em;
 
         .logo-image {
-            width: 60px;
-            height: auto;
+            width: 40px;
         }
 
         .logo-text {
@@ -42,7 +41,37 @@
 
         .user-profile-image {
             width: 40px;
-            height: auto;
+            height: auto;//
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding-inline: 0.5em;
+        font-size: $font-size-small;
+        height: 3.5em;
+
+        .header-logo {
+            gap: 0.5em;
+            padding-left: 0.5em;
+
+            .logo-image {
+                width: 40px;
+            }
+
+            .logo-text {
+                font-size: 1em;
+            }
+        }
+
+        .header-user-profile {
+            margin-right: 1em;
+            padding-inline: 0.6em;
+            gap: 0.5em;
+            height: 3em;
+
+            .user-profile-image {
+                width: 30px;
+            }
         }
     }
 
