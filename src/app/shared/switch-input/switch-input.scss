@@ -72,3 +72,11 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .toggle-container {
+    flex-direction: column;
+    align-items: flex-end;
+    padding-inline-end: 0;
+  }
+}

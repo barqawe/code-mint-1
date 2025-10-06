@@ -4,7 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class Layout {
-message: string = "Hello from Layout Service!";
 
-  
+  sideMenuOpen = true;
+  toggleSideMenu() {
+    this.sideMenuOpen = !this.sideMenuOpen;
+  }
+  public get isSideMenuOpen() {
+    return this.sideMenuOpen;
+  }
 }

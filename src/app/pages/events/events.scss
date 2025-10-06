@@ -171,7 +171,7 @@
       flex-direction: column;
       align-items: flex-start;
 
-      .event-field-guide {
+      .event-field-title {
         width: 100%;
         margin-bottom: 10px;
         text-align: left;
@@ -187,45 +187,106 @@
       }
     }
 
-    .titles-container {
-      .title {
-        padding: 1em;
+    .extra-title {
+      flex-direction: column;
 
-        .item-title {
-          flex-direction: column;
-          align-items: flex-start;
+      .extra-title-label {
+        width: 100%;
+        margin-bottom: 1em;
+      }
 
-          .item-title-label {
-            width: 100%;
-          }
-
-          .title-title-drop-down {
-            width: 100%;
-
-            .drop-down {
-              width: 100%;
-            }
-          }
-        }
+      .extra-title-items {
+        width: 100%;
 
         .item {
           flex-direction: column;
           align-items: flex-start;
+          padding: 1em;
+
+          .item-title {
+            width: 100%;
+            margin-bottom: 1em;
+          }
 
           .item-input-container {
             width: 100%;
+            align-items: stretch;
 
             .item-input {
               width: 100%;
+              margin: 5px 0;
             }
+          }
+
+          .delete-item-button {
+            align-self: flex-end;
+            margin-top: 0.5em;
           }
         }
       }
 
-      .add-item-button-container,
-      .add-title-button-container {
+      .add-item-button-container {
         justify-content: center;
         padding: 0;
+        width: 100%;
+      }
+    }
+
+    .extra-section {
+      flex-direction: column;
+      margin-top: 1em;
+
+      .extra-section-label {
+        width: 100%;
+        margin-bottom: 1em;
+      }
+
+      .extra-section-items {
+        width: 100%;
+
+        .item {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 1em;
+
+          .item-title {
+            width: 100%;
+            margin-bottom: 1em;
+          }
+
+          .item-input-container {
+            width: 100%;
+            align-items: stretch;
+
+            .item-input {
+              width: 100%;
+              margin: 5px 0;
+            }
+          }
+
+          .delete-item-button {
+            align-self: flex-end;
+            margin-top: 0.5em;
+          }
+        }
+      }
+
+      .add-item-button-container {
+        justify-content: center;
+        padding: 0;
+        width: 100%;
+      }
+    }
+
+    .form-buttons-container {
+      flex-direction: column;
+      padding: 0;
+      gap: 1em;
+
+      .cancel-button,
+      .submit-button {
+        width: 100%;
+        margin: 0;
       }
     }
   }

@@ -10,18 +10,11 @@ import { Layout } from '../../layout';
   styleUrl: './side-menu.scss'
 })
 export class SideMenu {
-  constructor(private layout:Layout) {
-    effect(() => {
-      console.log(`hehehehhehehah: ${this.counter()}`);
-    });
+  constructor(public layout:Layout) {
+   
   }
-  @Output() toggle = new EventEmitter<boolean>();
-  isOpen:boolean = true;
-  counter=signal([0,1,2,3,4]);
   toggleMenu() {
-    this.counter.update(arr=> [...arr,arr.length]);
-    this.isOpen = !this.isOpen;
-    this.toggle.emit(this.isOpen);
+    this.layout.toggleSideMenu();
   }
   }
 
