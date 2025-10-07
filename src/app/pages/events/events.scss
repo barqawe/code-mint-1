@@ -15,12 +15,13 @@
   background-color: #ffffff;
   margin-block: 15px;
   border-radius: 5px;
-  
+  height: 100vh; // Replaced 100% with vh for consistency
 
   .event-field {
     display: flex;
     justify-content: space-between;
     margin-block-end: 20px;
+    height: 100vh; // Replaced 100% with vh for consistency
 
     .event-field-title {
       width: 25%;
