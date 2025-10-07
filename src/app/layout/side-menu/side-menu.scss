@@ -1,18 +1,15 @@
 @import '../../../../public/colors.scss';
 @import '../../../../public/font-sizes.scss';
 
-
 .side-menu {
   width: 200px;
   height: 100%;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  font-size: $font-size-small ;
-
+  font-size: $font-size-small;
 
   .side-menu-header {
-
     .side-menu-logo {
       display: flex;
       justify-content: center;
@@ -24,7 +21,6 @@
         height: auto;
       }
     }
-
 
     .side-menu-toggle {
       display: flex;
@@ -56,7 +52,6 @@
     display: flex;
     flex-direction: column;
     gap: 0.3em;
-
 
     .side-menu-button {
       width: 100%;
@@ -103,9 +98,7 @@
     flex-direction: column;
     justify-content: flex-end;
     margin-top: auto;
-
   }
-
 }
 
 .side-menu.closed {
@@ -115,8 +108,6 @@
     padding-left: 20px;
     padding-right: 20px;
   }
-
-
 
   .side-menu-button {
     display: flex;
@@ -134,10 +125,7 @@
       margin-top: 0.9em;
       width: 240px;
       height: 240px;
-
     }
-
-
   }
 
   .divider {
@@ -162,21 +150,23 @@
 
     .side-menu-buttons {
       padding-inline-start: 0.1em;
-      gap: 0.1em;}
+      gap: 0.1em;
+    }
 
-      .side-menu-button {
-        height: 2.5em;
-        padding-inline-end: 0em;
-        font-size: 12px;}
+    .side-menu-button {
+      height: 2.5em;
+      padding-inline-end: 0em;
+      font-size: 12px;
+    }
 
-        .button-logo {
-          width: 16px;
-          height: 16px;}
-  
-}
-.side-menu{
-  .closed {
-    width: 50px;
+    .button-logo {
+      width: 16px;
+      height: 16px;
+    }
   }
- }
+  .side-menu {
+    &.closed {
+      width: 50px;
+    }
+  }
 }
