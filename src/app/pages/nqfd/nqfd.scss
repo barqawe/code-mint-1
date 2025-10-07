@@ -177,7 +177,6 @@
             width: 100%;
             margin-top: 1em;
             border-radius: 1em;
-            min-height: auto;
 
             .nqfd-header {
                 flex-direction: column;
@@ -217,7 +216,7 @@
 
             .nqfd-content {
                 gap: 0.5em;
-                overflow-x: auto;
+                overflow-x: scroll;
 
                 .nqfd-content-description,
                 .nqfd-content-items {
@@ -233,7 +232,6 @@
                 .nqfd-cell {
                     width: 4.5em;
                     min-width: 4.5em;
-                    height: auto;
                     font-size: 0.8em;
                     gap: 0.3em;
 
