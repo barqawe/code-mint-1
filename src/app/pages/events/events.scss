@@ -227,7 +227,6 @@
 
       .add-item-button-container {
         justify-content: center;
-        padding: 0;
         width: 100%;
       }
     }
@@ -273,14 +272,12 @@
 
       .add-item-button-container {
         justify-content: center;
-        padding: 0;
         width: 100%;
       }
     }
 
     .form-buttons-container {
       flex-direction: column;
-      padding: 0;
       gap: 1em;
 
       .cancel-button,

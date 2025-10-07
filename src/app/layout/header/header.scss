@@ -6,7 +6,7 @@
     background-color: #ffffff;
     width: 100%;
     padding-block: 0.3em;
-    height: 4em;//
+    height: 4em;
     font-size: $font-size-medium;
 
 
@@ -16,9 +16,11 @@
         justify-content: center;
         gap: 1em;
         padding-left: 1em;
+        height: auto;
 
         .logo-image {
             width: 40px;
+
         }
 
         .logo-text {
