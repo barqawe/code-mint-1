@@ -10,7 +10,8 @@
     width: 100%;
     height: $input-height;
     font-size: $font-size-small;
-    padding: 0 19px;
+    padding-block: 0;
+    padding-inline: 19px;
     text-align: left;
     position: relative;
     outline: none;

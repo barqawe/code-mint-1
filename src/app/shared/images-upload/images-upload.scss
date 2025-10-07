@@ -19,7 +19,8 @@
     border-color: $buttons-theme-color;
     color: $buttons-theme-color;
     border-radius: 4px;
-    padding: 8px 12px;
+    padding-block: 8px;
+    padding-inline: 12px;
     width: 8em ;
     height: 6em;
     cursor: pointer;
@@ -28,7 +29,7 @@
     width: 100px;
     height: 100px;
     object-fit: cover;
-    margin-right: 10px;
+    margin-inline-end: 10px;
     border-radius: 8px;
 }
 }

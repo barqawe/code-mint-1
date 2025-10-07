@@ -4,11 +4,12 @@
 .event-name-input {
     width: 100%;
     height: $input-height;
-    padding: 0 12px;
+    padding-block: 0;
+    padding-inline: 12px;
     border: none;
     border-radius: $border-radius-standard;
     font-size: $font-size-small;
-    margin: 15px 0;
+    margin-block: 15px;
     background-color: $input-bg-color;
     color: $input-text-color;
     outline: none;
@@ -19,4 +20,4 @@
         color: $input-text-color;
         font-size: $font-size-small;
     }
-} 
+}

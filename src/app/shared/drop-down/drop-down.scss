@@ -5,7 +5,8 @@
 .drop-down {
     width: 100%;
     height: $input-height;
-    padding: 0 12px;
+    padding-block: 0;
+    padding-inline: 12px;
     font-size: $font-size-small;
     border: none;
     border-radius: $border-radius-standard;

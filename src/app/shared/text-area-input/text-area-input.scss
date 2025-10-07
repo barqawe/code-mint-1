@@ -4,7 +4,8 @@
 .event-text-area-input {
     width: 100%;
     min-height: 120px;
-    padding: 12px 16px;
+    padding-block: 12px;
+    padding-inline: 16px;
     border: none;
     border-radius: $border-radius-standard;
     font-family: inherit;
