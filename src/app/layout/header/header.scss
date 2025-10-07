@@ -3,6 +3,7 @@
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #ffffff;
     width: 100%;
     padding-block: 0.3em;
@@ -32,17 +33,17 @@
     .header-user-profile {
         border: 1px solid #918e8e;
         border-radius: 1em;
-        height: 4em;
+        height: 3em;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center ;
         gap: 1em;
         margin-inline-end: 2em;
         padding-inline: 1em;
         cursor: pointer;
 
         .user-profile-image {
-            width: 40px;
+            width: 20px;
         }
     }
 

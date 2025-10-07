@@ -12,51 +12,27 @@
     </header>
 
     <nav class="side-menu-top-buttons">
-
-
         <ul class="side-menu-buttons">
-
-            
-            <li><button routerLink="/" routerLinkActive="active" #EventLink="routerLinkActive" class="side-menu-button" [routerLinkActiveOptions]="{exact:true}">
-                    <img class="button-logo" [src]="EventLink.isActive?'/side-menu-icons/active-academic-year.svg' : '/side-menu-icons/non-active-academic-year.svg'" alt="">
-                    <span class="button-text">Event Form</span>
-                </button></li>
-
-            <li><button class="side-menu-button"><img class="button-logo"
-                        src="/side-menu-icons/non-active-graduate-attributes.svg" alt=""><span class="button-text">Grad
-                        Attributes</span></button></li>
-
-
-            <li><button routerLink="/nqfd" routerLinkActive="active" #nqfdLink="routerLinkActive" 
-                    class="side-menu-button" >
-                    <img class="button-logo"
-                        [src]="nqfdLink.isActive ? '/side-menu-icons/active-national-qualifications-framework-descriptors.svg' : '/side-menu-icons/non-active-national-qualifications-framework-descriptors.svg'"
-                        alt="">
-                    <span class="button-text">NQF Descriptors</span>
-                </button></li>
-
-
-            <li><button class="side-menu-button"><img class="button-logo"
-                        src="/side-menu-icons/non-active-evaluation-criterion.svg" alt=""><span
-                        class="button-text">Evaluation criterion</span></button></li>
-
-
-            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-program.svg"
-                        alt=""><span class="button-text">Programs</span></button></li>
-
-
-            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/non-active-course.svg"
-                        alt=""><span class="button-text">Courses</span></button></li>
-
-
-            <li><button class="side-menu-button"><img class="button-logo"
-                        src="/side-menu-icons/non-active-graduate-attributes.svg" alt=""><span
-                        class="button-text">C.Sections</span></button></li>
-
+            @for (item of menuItems; track item.text) {
+                <li>
+                    <button
+                        class="side-menu-button"
+                        [routerLink]="item.routerLink || null"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: item.exact || false }"
+                        #activeState="routerLinkActive"
+                    >
+                        <img
+                            class="button-logo"
+                            [src]="activeState.isActive ? item.isActiveIcon : item.inactiveIcon"
+                            alt=""
+                        />
+                        <span class="button-text">{{ item.text }}</span>
+                    </button>
+                </li>
+            }
         </ul>
     </nav>
-
-
 
     <nav class="side-menu-bottom-buttons">
 

@@ -96,18 +96,16 @@
             }
 
             .nqfd-content-items {
-
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
                 height: 3em;
                 background-color: #FFFFFF;
                 margin: 0px 1em;
-                &.isOdd {
+
+                &:nth-child(odd) {
                     background-color: #F4F7FB;
                 }
-
-
 
             }
 
@@ -120,7 +118,9 @@
                 height: 5em;
                 gap: 0.6em;
                 text-align: center;
-                img{cursor: pointer;}
+                img {
+                    cursor: pointer;
+                }
 
                 .action-icon {
                     width: 20px;
