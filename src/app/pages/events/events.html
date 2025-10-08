@@ -146,7 +146,7 @@
               <input type="text" placeholder="Item Name in English" class="item-input"
                 [formControl]="$any(eventForm.controls.requirements.controls[$index]).controls.itemNameEn">
             </div>
-            <div class="delete-item-button" (click)="delete('requirements', $index)">X</div>
+           <img class="delete-item-button" (click)="delete('requirements', $index)"src="/other-icons-png/close.png"  >
           </div>
 
 
@@ -182,7 +182,7 @@
               <input type="text" placeholder="Item Name in English" class="item-input"
                 [formControl]="$any(eventForm.controls.benefits.controls[$index]).controls.itemNameEn">
             </div>
-            <div class="delete-item-button" (click)="delete('benefits', $index)">X</div>
+            <img class="delete-item-button" (click)="delete('benefits', $index)" src="other-icons-png/close.png" alt="">
           </div>
 
 
@@ -217,7 +217,7 @@
                 <input type="text" placeholder="Item Name in English" class="item-input"
                   [formControl]="$any(eventForm.controls.restrictions.controls[$index]).controls.itemNameEn">
               </div>
-              <div class="delete-item-button" (click)="delete('restrictions', $index)">X</div>
+   <img src="/other-icons-png/close.png"   class="delete-item-button" (click)="delete('restrictions', $index)"alt="">
             </div>
 
 
