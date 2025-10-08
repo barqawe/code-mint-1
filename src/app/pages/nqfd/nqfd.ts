@@ -13,8 +13,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 export class Nqfd implements OnInit  {
   nqfds: NqfdI[] = [];
   private destroyRef = inject(DestroyRef);
-
-  constructor(private http: HttpClient) { }
+  public http = inject(HttpClient);
 
   ngOnInit() {
     this.fetchNqfds();

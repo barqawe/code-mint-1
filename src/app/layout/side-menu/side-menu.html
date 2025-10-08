@@ -1,4 +1,4 @@
-<aside class="side-menu " [ngClass]="{'closed': !layout.isSideMenuOpen}">
+<aside class="side-menu " [ngClass]="{'closed': !layout.sideMenuOpen()}">
     <header class="side-menu-header">
         <div class="side-menu-logo">
             <img src="/side-menu-icons/full-eduminty-logo.svg" alt="App Logo" class="logo-image" />
@@ -14,21 +14,20 @@
     <nav class="side-menu-top-buttons">
         <ul class="side-menu-buttons">
             @for (item of menuItems; track item.text) {
-                <li>
-                    <button
-                        class="side-menu-button"
+                <li
+                    class="side-menu-button"
                         [routerLink]="item.routerLink || null"
                         routerLinkActive="active"
                         [routerLinkActiveOptions]="{ exact: item.exact || false }"
                         #activeState="routerLinkActive"
-                    >
+                >
+                  
                         <img
                             class="button-logo"
                             [src]="activeState.isActive ? item.isActiveIcon : item.inactiveIcon"
                             alt=""
                         />
                         <span class="button-text">{{ item.text }}</span>
-                    </button>
                 </li>
             }
         </ul>
@@ -39,12 +38,12 @@
         <hr class="divider">
 
         <ul class="side-menu-buttons">
-            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/mintyhub.svg"
-                        alt=""><span class="button-text">MintyHub</span></button></li>
-            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/ar-translate.svg"
-                        alt=""><span class="button-text">عربي</span></button></li>
-            <li><button class="side-menu-button"><img class="button-logo" src="/side-menu-icons/logout.svg" alt=""><span
-                        class="button-text">Logout</span></button></li>
+            <li class="side-menu-button"><img class="button-logo" src="/side-menu-icons/mintyhub.svg"
+                        alt=""><span class="button-text">MintyHub</span></li>
+            <li class="side-menu-button" ><img class="button-logo" src="/side-menu-icons/ar-translate.svg"
+                        alt=""><span class="button-text">عربي</span></li>
+            <li class="side-menu-button"><img class="button-logo" src="/side-menu-icons/logout.svg" alt=""><span
+                        class="button-text">Logout</span></li>
 
         </ul>
     </nav>

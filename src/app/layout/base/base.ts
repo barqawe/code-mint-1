@@ -17,6 +17,6 @@ export class Base {
  public readonly  layout = inject(Layout);
 
  constructor() {
-  console.log(this.layout.isSideMenuOpen);
+  console.log(this.layout.sideMenuOpen());
  }
 }

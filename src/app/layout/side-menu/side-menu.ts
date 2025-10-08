@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, inject, signal, effect } from '@angular/core';
+import { Component, Output, EventEmitter, inject, signal, effect, HostListener } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Layout } from '../../layout';
@@ -11,14 +11,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './side-menu.scss'
 })
 export class SideMenu {
-  constructor(public layout: Layout) {
+  constructor() {
+    this.checkScreenSize();
   }
 
-  toggleMenu() {
-    this.layout.toggleSideMenu();
-  }
-
-  menuItems = [
+    menuItems = [
     {
       routerLink: '/',
       isActiveIcon: '/side-menu-icons/active-academic-year.svg',
@@ -76,6 +73,26 @@ export class SideMenu {
       isActive: false
     }
   ];
+
+  public layout = inject(Layout);
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.checkScreenSize();
+  }
+
+  private checkScreenSize() {
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile && this.layout.sideMenuOpen()) {
+      this.layout.sideMenuOpen.set(false);
+    }
+  }
+
+  toggleMenu() {
+    this.layout.sideMenuOpen.update(value => !value);
+  }
+
+
 }
 
 
