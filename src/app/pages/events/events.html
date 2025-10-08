@@ -1,7 +1,7 @@
-<section class="event">
+<article class="event">
 
   <h2 class="event-title">Events</h2>
-  <article class="event-form">
+  <section class="event-form">
     <header class="event-form-header">
       <h2>Add New Event</h2>
       <hr />
@@ -128,7 +128,7 @@
           <p class="title-subtitle">add requirements for the event</p>
         </header>
 
-        <div class="extra-title-items">
+        <section class="extra-title-items">
           @for (item of eventForm.controls.requirements.controls; track $index) {
 
           <div class="item">
@@ -154,7 +154,7 @@
           <div class="add-item-button-container">
             <button type="button" class="add-item-button" (click)="addItem('requirements')">+Add another Item </button>
           </div>
-        </div>
+        </section>
 
       </section>
 
@@ -236,8 +236,7 @@
       <footer class="form-buttons-container">
         <button type="button" class="cancel-button">Cancel</button>
         <button type="submit" class="submit-button">Submit</button>
-        <img alt="">
       </footer>
     </form>
-  </article>
-</section>
+  </section>
+</article>

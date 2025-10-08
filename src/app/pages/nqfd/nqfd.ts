@@ -1,12 +1,11 @@
 import { Component, OnInit, DestroyRef, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NqfdI } from './interfaces/nqfd.interface';
-import { NgClass } from "@angular/common";
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-nqfd',
-  imports: [NgClass],
+  imports: [],
   templateUrl: './nqfd.html',
   styleUrl: './nqfd.scss'
 })

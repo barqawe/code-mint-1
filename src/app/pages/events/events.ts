@@ -1,5 +1,5 @@
-import { Component, Inject, inject } from '@angular/core';
-import { FormBuilder, FormArray, FormGroup, ReactiveFormsModule, Validators, FormControl } from '@angular/forms';
+import { Component,  inject } from '@angular/core';
+import { FormBuilder, FormArray, ReactiveFormsModule, Validators,  } from '@angular/forms';
 import { TextInput } from '../../shared/text-input/text-input';
 import { TextAreaInput } from '../../shared/text-area-input/text-area-input';
 import { DateInput } from '../../shared/date-input/date-input';
@@ -8,6 +8,7 @@ import { ImagesUpload } from '../../shared/images-upload/images-upload';
 import { LabeledTextInput } from '../../shared/labeled-text-input/labeled-text-input';
 import { DropDown } from '../../shared/drop-down/drop-down';
 import { SwitchInput } from "../../shared/switch-input/switch-input";
+import {VALIDATORS} from "../../shared/constants/global-validation.constant"
 
 @Component({
   selector: 'app-events',
@@ -31,19 +32,42 @@ export class Events {
   constructor() { }
 
 
+
   eventMediaContent: object[] = [];
 
   eventForm = this.fb.group({
-    eventNameEn: ['',Validators.required , Validators.minLength(3)],
-    eventNameAr: ['',Validators.required , Validators.minLength(3)],
-    eventDescriptionEn: ['', Validators.required , Validators.minLength(3)],
-    eventDescriptionAr: ['', Validators.required , Validators.minLength(3)],
-    eventDate: ['', Validators.required],
-    eventTime: ['', Validators.required],
-    active: [true, Validators.required],
-    eventprice: ['', Validators.required],
-    eventSubCategory: ['', Validators.required],
-    eventAvailableQuantity: ['', Validators.required],
+    eventNameEn: ['', [
+      Validators.required,
+      Validators.minLength(VALIDATORS.NAME.MIN_LENGTH),
+      Validators.maxLength(VALIDATORS.NAME.MAX_LENGTH),
+    ]],
+    eventNameAr: ['', [
+      Validators.required,
+      Validators.minLength(VALIDATORS.NAME.MIN_LENGTH),
+      Validators.maxLength(VALIDATORS.NAME.MAX_LENGTH),
+    ]],
+    eventDescriptionEn: ['', [
+      Validators.required,
+      Validators.minLength(VALIDATORS.DESCRIPTION.MIN_LENGTH),
+      Validators.maxLength(VALIDATORS.DESCRIPTION.MAX_LENGTH),
+    ]],
+    eventDescriptionAr: ['', [
+      Validators.required,
+      Validators.minLength(VALIDATORS.DESCRIPTION.MIN_LENGTH),
+      Validators.maxLength(VALIDATORS.DESCRIPTION.MAX_LENGTH),
+    ]],
+    eventDate: ['', [
+      Validators.required,
+    
+    ]],
+    eventTime: ['', [
+      Validators.required,
+   
+    ]],
+    active: [true],
+    eventprice: ['', [Validators.required]],
+    eventSubCategory: [''],
+    eventAvailableQuantity: ['', [Validators.required]],
     requirements: this.fb.array([]),
     benefits: this.fb.array([]),
     restrictions: this.fb.array([]),
@@ -53,12 +77,24 @@ export class Events {
     return this.eventForm.controls.eventNameEn;
   }
 
+
+
   addItem(formArrayName: string): void {
     const formArray = this.eventForm.get(formArrayName) as FormArray;
-    formArray.push(this.fb.group({
-      itemNameEn: ['', Validators.required],
-      itemNameAr: ['', Validators.required],
-    }));
+    formArray.push(
+      this.fb.group({
+        itemNameEn: ['', [
+          Validators.required,
+          Validators.minLength(VALIDATORS.NAME.MIN_LENGTH),
+          Validators.maxLength(VALIDATORS.NAME.MAX_LENGTH),
+        ]],
+        itemNameAr: ['', [
+          Validators.required,
+          Validators.minLength(VALIDATORS.NAME.MIN_LENGTH),
+          Validators.maxLength(VALIDATORS.NAME.MAX_LENGTH),
+        ]],
+      })
+    );
   }
 
   delete(formArrayItem: string, index: number): void {
