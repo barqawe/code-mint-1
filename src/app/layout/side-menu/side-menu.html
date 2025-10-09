@@ -13,18 +13,20 @@
 
     <nav class="side-menu-top-buttons">
         <ul class="side-menu-buttons">
-            @for (item of menuItems; track item.text) {
+            @for (item of menuItemsList; track item.text) {
                 <li
                     class="side-menu-button"
                         [routerLink]="item.routerLink || null"
                         routerLinkActive="active"
                         [routerLinkActiveOptions]="{ exact: item.exact || false }"
                         #activeState="routerLinkActive"
+                        (mouseenter)="item.isHovered = true"
+                        (mouseleave)="item.isHovered = false"
                 >
                   
                         <img
                             class="button-logo"
-                            [src]="activeState.isActive ? item.isActiveIcon : item.inactiveIcon"
+                            [src]="item.isHovered ? item.hoverIcon : (activeState.isActive ? item.isActiveIcon : item.inactiveIcon)"
                             alt=""
                         />
                         <span class="button-text">{{ item.text }}</span>

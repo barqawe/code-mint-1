@@ -50,7 +50,7 @@
         </table>
         <div class="nqfd-pagination">
             <div class="nqfd-pagination-resaults-count">
-                showing {{nqfds.length * currentPage}} out of {{nqfdsCount}}
+                showing {{nqfds.length * currentPage()}} out of {{nqfdsCount}}
             </div>
             <div class="nqfd-pagination-buttons">
                 <button class="pagination-buttons" (click)="previousePages()">
@@ -60,7 +60,7 @@
                             <
                 </button>
                 <div class="pagination-buttons count">
-                    {{currentPage}}
+                    {{currentPage()}}
 
                 </div>
                  <button class="pagination-buttons" (click)="nextPage()">

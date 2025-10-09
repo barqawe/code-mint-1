@@ -15,64 +15,78 @@ export class SideMenu {
     this.checkScreenSize();
   }
 
-    menuItems = [
+    menuItems = signal([
     {
       routerLink: '/',
       isActiveIcon: '/side-menu-icons/active-academic-year.svg',
       inactiveIcon: '/side-menu-icons/non-active-academic-year.svg',
+      hoverIcon: '/side-menu-icons/active-academic-year.svg',
       text: 'Event Form',
       exact: true,
-      isActive: false
+      isActive: false,
+      isHovered: false,
     },
     {
       routerLink: null,
       isActiveIcon: '/side-menu-icons/non-active-graduate-attributes.svg',
       inactiveIcon: '/side-menu-icons/non-active-graduate-attributes.svg',
+      hoverIcon: '/side-menu-icons/non-active-graduate-attributes.svg',
       text: 'Grad Attributes',
       exact: false,
-      isActive: false
+      isActive: false,
+      isHovered: false, 
     },
     {
       routerLink: '/nqfd',
       isActiveIcon: '/side-menu-icons/active-national-qualifications-framework-descriptors.svg',
       inactiveIcon: '/side-menu-icons/non-active-national-qualifications-framework-descriptors.svg',
+      hoverIcon: '/side-menu-icons/active-national-qualifications-framework-descriptors.svg',
       text: 'NQF Descriptors',
       exact: true,
-      isActive: false
+      isActive: false,
+      isHovered: false, 
     },
     {
       routerLink: null,
       isActiveIcon: '/side-menu-icons/non-active-evaluation-criterion.svg',
       inactiveIcon: '/side-menu-icons/non-active-evaluation-criterion.svg',
+      hoverIcon: '/side-menu-icons/non-active-evaluation-criterion.svg',
       text: 'Evaluation criterion',
       exact: false,
-      isActive: false
+      isActive: false,
+      isHovered: false, 
     },
     {
       routerLink: null,
       isActiveIcon: '/side-menu-icons/non-active-program.svg',
       inactiveIcon: '/side-menu-icons/non-active-program.svg',
+      hoverIcon: '/side-menu-icons/non-active-program.svg',
       text: 'Programs',
       exact: false,
-      isActive: false
+      isActive: false,
+      isHovered: false,
     },
     {
       routerLink: null,
       isActiveIcon: '/side-menu-icons/non-active-course.svg',
       inactiveIcon: '/side-menu-icons/non-active-course.svg',
+      hoverIcon: '/side-menu-icons/non-active-course.svg',
       text: 'Courses',
       exact: false,
-      isActive: false
+      isActive: false,
+      isHovered: false, 
     },
     {
       routerLink: null,
       isActiveIcon: '/side-menu-icons/non-active-graduate-attributes.svg',
       inactiveIcon: '/side-menu-icons/non-active-graduate-attributes.svg',
+      hoverIcon: '/side-menu-icons/non-active-graduate-attributes.svg',
       text: 'C.Sections',
       exact: false,
-      isActive: false
+      isActive: false ,
+      isHovered: false, 
     }
-  ];
+  ]);
 
   public layout = inject(Layout);
 
@@ -90,6 +104,10 @@ export class SideMenu {
 
   toggleMenu() {
     this.layout.sideMenuOpen.update(value => !value);
+  }
+
+  get menuItemsList() {
+    return this.menuItems();
   }
 
 

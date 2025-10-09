@@ -8,7 +8,8 @@ import { ImagesUpload } from '../../shared/images-upload/images-upload';
 import { LabeledTextInput } from '../../shared/labeled-text-input/labeled-text-input';
 import { DropDown } from '../../shared/drop-down/drop-down';
 import { SwitchInput } from "../../shared/switch-input/switch-input";
-import {VALIDATORS} from "../../shared/constants/global-validation.constant"
+import { VALIDATORS } from "../../shared/constants/global-validation.constant";
+import { signal } from '@angular/core';
 
 @Component({
   selector: 'app-events',
@@ -31,9 +32,7 @@ export class Events {
 
   constructor() { }
 
-
-
-  eventMediaContent: object[] = [];
+  eventMediaContent = signal<object[]>([]);
 
   eventForm = this.fb.group({
     eventNameEn: ['', [
@@ -122,7 +121,7 @@ export class Events {
 
   // i should implement its value to form Group 
   onImagesSelected(images: object[]): void {
-    this.eventMediaContent = images;
+    this.eventMediaContent.set(images);
   }
 
 }

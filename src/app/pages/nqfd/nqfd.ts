@@ -2,6 +2,7 @@ import { Component, OnInit, DestroyRef, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NqfdI } from './interfaces/nqfd.interface';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { signal } from '@angular/core';
 
 @Component({
   selector: 'app-nqfd',
@@ -18,14 +19,14 @@ export class Nqfd implements OnInit  {
     this.fetchNqfds();
     this.getPagesCount();
       }
-  currentPage: number = 1;
+  currentPage = signal(1);
 
   pageSize: number = 15;
   totalPages: number = 0;
   nqfdsCount: number = 0;
 
   fetchNqfds() {
-    const apiUrl = `https://68de185cd7b591b4b78e5ef2.mockapi.io/nqfd?page=${this.currentPage}&limit=${this.pageSize}`;
+    const apiUrl = `https://68de185cd7b591b4b78e5ef2.mockapi.io/nqfd?page=${this.currentPage()}&limit=${this.pageSize}`;
 
     this.http.get<NqfdI[]>(apiUrl).pipe(
       takeUntilDestroyed(this.destroyRef)
@@ -60,34 +61,34 @@ export class Nqfd implements OnInit  {
   }
  
   previousePage() {
-    if (this.currentPage - 1 > 0) {
-      this.currentPage--;
+    if (this.currentPage() - 1 > 0) {
+      this.currentPage.set(this.currentPage() - 1);
     }
     console.log(this.currentPage);
     this.fetchNqfds();
   }
   
   previousePages() {
-    if (this.currentPage - 5 > 0) {
-      this.currentPage -= 5;
+    if (this.currentPage() - 5 > 0) {
+      this.currentPage.set(this.currentPage() - 5);
     } else {
-      this.currentPage = 1;
+      this.currentPage.set(1);
     }
     this.fetchNqfds();
   }
 
   nextPage() {
-   if (this.currentPage + 1 <= this.totalPages) {
-      this.currentPage++;
+   if (this.currentPage() + 1 <= this.totalPages) {
+      this.currentPage.set(this.currentPage() + 1);
       this.fetchNqfds();
    }
     
   }
   nextPages(){
-    if (this.currentPage + 5 <= this.totalPages) {
-      this.currentPage += 5;
+    if (this.currentPage() + 5 <= this.totalPages) {
+      this.currentPage.set(this.currentPage() + 5);
     } else {
-      this.currentPage = this.totalPages;
+      this.currentPage.set(this.totalPages);
     }
     this.fetchNqfds();
   }
