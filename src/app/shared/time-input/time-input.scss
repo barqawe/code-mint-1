@@ -1,15 +1,15 @@
-@import '../../../../public/colors.scss';
-@import '../../../../public/font-sizes.scss';
+@use '../../../../public/colors.scss' as colors;
+@use '../../../../public/font-sizes.scss' as fontSizes;
 
 .time-input {
-    background-color: $input-bg-color;
+    background-color: colors.$input-bg-color;
     border: none;
-    border-radius: $border-radius-standard;
+    border-radius: fontSizes.$border-radius-standard;
     font-weight: 500;
-    color: $input-text-color;
+    color: colors.$input-text-color;
     width: 100%;
-    height: $input-height;
-    font-size: $font-size-small;
+    height: fontSizes.$input-height;
+    font-size: fontSizes.$font-size-small;
     padding-block: 0;
     padding-inline: 19px;
     text-align: left;

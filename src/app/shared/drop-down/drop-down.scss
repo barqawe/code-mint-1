@@ -1,17 +1,17 @@
-@import '../../../../public/colors.scss';
-@import '../../../../public/font-sizes.scss';
+@use '../../../../public/colors.scss' as colors;
+@use '../../../../public/font-sizes.scss' as fontSizes;
 
 
 .drop-down {
     width: 100%;
-    height: $input-height;
+    height: fontSizes.$input-height;
     padding-block: 0;
     padding-inline: 12px;
-    font-size: $font-size-small;
+    font-size: fontSizes.$font-size-small;
     border: none;
-    border-radius: $border-radius-standard;
-    background-color: $input-bg-color;
-    color: $input-text-color;
+    border-radius: fontSizes.$border-radius-standard;
+    background-color: colors.$input-bg-color;
+    color: colors.$input-text-color;
     cursor: pointer;
     outline: none;
     appearance: none;

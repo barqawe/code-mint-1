@@ -1,4 +1,4 @@
-@import '../../../../public/font-sizes.scss';
+@use '../../../../public/font-sizes.scss' as fontSizes;
 
 .header {
     display: flex;
@@ -8,7 +8,7 @@
     width: 100%;
     padding-block: 0.3em;
     height: 4em;
-    font-size: $font-size-medium;
+    font-size: fontSizes.$font-size-medium;
 
 
     .header-logo {
@@ -49,7 +49,7 @@
 
     @media (max-width: 768px) {
         padding-inline: 0.5em;
-        font-size: $font-size-small;
+        font-size: fontSizes.$font-size-small;
         height: 3.5em;
 
         .header-logo {

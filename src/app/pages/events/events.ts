@@ -119,7 +119,6 @@ export class Events {
     }
   }
 
-  // i should implement its value to form Group 
   onImagesSelected(images: object[]): void {
     this.eventMediaContent.set(images);
   }

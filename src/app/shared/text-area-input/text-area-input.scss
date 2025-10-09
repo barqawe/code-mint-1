@@ -1,5 +1,5 @@
-@import '../../../../public/colors.scss';
-@import '../../../../public/font-sizes.scss';
+@use '../../../../public/colors.scss' as colors;
+@use '../../../../public/font-sizes.scss' as fontSizes;
 
 .event-text-area-input {
     width: 100%;
@@ -7,20 +7,20 @@
     padding-block: 12px;
     padding-inline: 16px;
     border: none;
-    border-radius: $border-radius-standard;
+    border-radius: fontSizes.$border-radius-standard;
     font-family: inherit;
-    font-size: $font-size-small;
+    font-size: fontSizes.$font-size-small;
     line-height: 1.5;
-    color: $input-text-color;
-    background-color: $input-bg-color;
+    color: colors.$input-text-color;
+    background-color: colors.$input-bg-color;
     resize: none;
     outline: none;
     box-sizing: border-box;
 
 
     &::placeholder {
-        color: $input-text-color;
-        font-size: $font-size-small;
+        color: colors.$input-text-color;
+        font-size: fontSizes.$font-size-small;
         font-style: normal;
     }
 

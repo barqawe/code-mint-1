@@ -1,5 +1,5 @@
-@import '../../../../public/colors.scss';
-@import '../../../../public/font-sizes.scss';
+@use '../../../../public/colors.scss' as colors;
+@use '../../../../public/font-sizes.scss' as fontSizes;
 
 .labeled-text-input-container {
     position: relative;
@@ -8,20 +8,20 @@
 
     .labeled-text-input {
         width: 100%;
-        height: $input-height;
+        height: fontSizes.$input-height;
         padding-block: 0;
         padding-inline: 50px 12px; // Added right padding to accommodate the label
         border: none;
-        border-radius: $border-radius-standard;
-        font-size: $font-size-small;
-        background-color: $input-bg-color;
-        color: $input-text-color;
+        border-radius: fontSizes.$border-radius-standard;
+        font-size: fontSizes.$font-size-small;
+        background-color: colors.$input-bg-color;
+        color: colors.$input-text-color;
         outline: none;
         box-sizing: border-box;
         
         &::placeholder {
-            color: $input-text-color;
-            font-size: $font-size-small;
+            color: colors.$input-text-color;
+            font-size: fontSizes.$font-size-small;
         }
     }
 
@@ -31,8 +31,8 @@
         top: 50%;
         transform: translateY(-50%);
         background-color: transparent;
-        color: $input-text-color;
-        font-size: $font-size-small;
+        color: colors.$input-text-color;
+        font-size: fontSizes.$font-size-small;
         font-weight: 500;
     }
 }

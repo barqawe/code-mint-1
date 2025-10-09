@@ -1,5 +1,5 @@
-@import '../../../../public/colors.scss';
-@import '../../../../public/font-sizes.scss';
+@use '../../../../public/colors.scss' as colors;
+@use '../../../../public/font-sizes.scss' as fontSizes;
 
 .images-upload-container {
     display: flex;
@@ -16,8 +16,8 @@
     align-items: center;
     border-style: dashed;
     border-width: 2px;
-    border-color: $buttons-theme-color;
-    color: $buttons-theme-color;
+    border-color: colors.$buttons-theme-color;
+    color: colors.$buttons-theme-color;
     border-radius: 4px;
     padding-block: 8px;
     padding-inline: 12px;

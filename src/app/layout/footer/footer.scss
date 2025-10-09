@@ -1,5 +1,5 @@
-@import '../../../../public/colors.scss';
-@import '../../../../public/font-sizes.scss';
+@use '../../../../public/colors.scss' as colors;
+@use '../../../../public/font-sizes.scss' as fontSizes;
 
 .footer {
     background-color: transparent;
@@ -7,10 +7,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $input-text-color;
-    font-size: $font-size-small;
+    color: colors.$input-text-color;
+    font-size: fontSizes.$font-size-small;
 
     &-special {
-        color: $blue-theme-color;
+        color: colors.$blue-theme-color;
     }
 }

@@ -1,5 +1,5 @@
-@import '../../../../public/colors.scss';
-@import '../../../../public/font-sizes.scss';
+@use '../../../../public/colors.scss' as colors;
+@use '../../../../public/font-sizes.scss' as fontSizes;
 
 .side-menu {
   width: 200px;
@@ -7,7 +7,7 @@
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  font-size: $font-size-small;
+  font-size: fontSizes.$font-size-small;
   text-wrap: wrap;
 
   .side-menu-header {
@@ -64,19 +64,19 @@
       border: none;
       text-align: center;
       font-size: 14px;
-      color: $input-text-color;
+      color: colors.$input-text-color;
       cursor: pointer;
       border-top-left-radius: 0.4em;
       border-bottom-left-radius: 0.4em;
       gap: 0.5em;
 
       &:hover {
-        background-color: $blue-theme-color;
+        background-color: colors.$blue-theme-color;
         color: white;
       }
 
       &.active {
-        background-color: $blue-theme-color;
+        background-color: colors.$blue-theme-color;
         color: white;
       }
 
@@ -127,7 +127,7 @@
   }
 
   .divider {
-    margin: 0.8em 0.2em; // Adjust divider margins
+    margin: 0.8em 0.2em; 
   }
 }
 
