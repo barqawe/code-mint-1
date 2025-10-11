@@ -9,6 +9,7 @@
     padding-block: 0.3em;
     height: 4em;
     font-size: fontSizes.$font-size-medium;
+    box-sizing: border-box;
 
 
     .header-logo {
@@ -54,7 +55,7 @@
 
         .header-logo {
             gap: 0.5em;
-            padding-left: 0.5em;
+            padding-inline-start: 0.5em;
 
             .logo-image {
                 width: 40px;
